@@ -1,0 +1,23 @@
+
+[
+{   
+"dish_name" : "Fried Chicken",
+"description" : "American",
+"cuisine_id": 1,
+"has_nuts" : "false",
+"has_dairy" : "false",
+"vegan" : "false",
+"has_gluten" : "true",
+"has_shellfish" : "false"
+},
+{
+"dish_name": "Chicken Pad Thai",
+"description": "Asain",
+"cuisine_id": 2,
+"has_nuts": "false",
+"has_dairy": "false",
+"vegan": "false",
+"has_gluten": "true",
+"has_shellfish": "false"
+}
+]
