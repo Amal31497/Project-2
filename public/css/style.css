@@ -1,0 +1,51 @@
+.hero-image{
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+    background: url(./assets/background_pic.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.logo {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    color:white;
+    font-family: 'Viga', sans-serif;
+}
+
+.row {
+    margin: auto;
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-bottom:10px;
+}  
+
+.form-box {
+    display: flex; 
+    margin-right: 5px;
+    border-color: dimgrey;
+}
+
+
+.btn-group {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.search {
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    border-color: black;
+    margin-left: 5px;
+}
+
+.copyright{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    color: white;
+    background: url(./assets/footer.jpg) no-repeat center;
+    background-size: cover;
+}
