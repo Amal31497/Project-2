@@ -6,7 +6,7 @@
         "address" : "1720-166th St. Ct. East",
         "city" : "Spanaway",
         "state" : "Wa",
-        "phone_number" : 3603251819,
+        "phone_number" : "3603251819",
         "zipcode" : 98387,
         "password" : "1234",
         "cuisine_id" : 1
@@ -18,7 +18,7 @@
         "address" : "1897-176th St. Ct. East",
         "city" : "Tacoma",
         "state" : "Wa",
-        "phone_number" : 3605991819,
+        "phone_number" : "3605991819",
         "zipcode" : 98387,
         "password" : "4567",
         "cuisine_id" : 2
