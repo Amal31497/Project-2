@@ -1,17 +1,22 @@
 [
 {
-    "cuisine_name" : "American"
+    "cuisine_name" : "American",
+    "chef_id":1
 },
 {
-    "cuisine_name" : "Asian"
+    "cuisine_name" : "Asian",
+    "chef_id":2
 },
 {
-    "cuisine_name" : "Mexican"
+    "cuisine_name" : "Mexican",
+    "chef_id":2
 },
 {
-    "cuisine_name" : "Indian"
+    "cuisine_name" : "Indian",
+    "chef_id":1
 },
 {
-    "cuisine_name" : "Mediterranean"
+    "cuisine_name" : "Mediterranean",
+    "chef_id":2
 }
 ]
