@@ -4,7 +4,7 @@ const Cuisine = require("./Cuisine");
 const Dish = require("./Dishes");
 const Order = require("./Orders");
 
-Chef.has(Cuisine, {
+Chef.hasOne(Cuisine, {
     foreignKey: "chef_id",
 });
 Cuisine.belongsTo(Chef, {

@@ -1,0 +1,17 @@
+{{!-- TODO Create a card for the chef of the week --}}
+<div class="container-xl">
+    <div class="row" id="chefs">
+        <h2 span>AVAILABLE CHEFS IN YOUR NEIGHBORHOOD</h2>
+        {{#each chefs as |chef|}}
+        {{> top-chefs}}
+        {{/each}}
+    </div>
+</div>
+<div class="container-xl">
+    <div class="row" id="weekDishes">
+        <h2>DISHES OF THE WEEK</h2>
+        {{#each dishes as |dish|}}
+        {{> top-dishes}}
+        {{/each}}
+    </div>
+</div>
