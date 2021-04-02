@@ -12,8 +12,8 @@ Cuisine.belongsTo(Chef, {
 });
 
 Cuisine.hasMany(Dish, {
-    foreignKey: "cuisine_id",
-    onDelete: "CASCADE"
+  foreignKey: "cuisine_id",
+    //onDelete: "CASCADE"
 });
 
 Dish.belongsTo(Cuisine, {
