@@ -1,5 +1,20 @@
 const router = require('express').Router();
-const { Chef } = require('../../models');
+const { Chef,Cuisine,Dish } = require('../../models');
+
+router.get('/',async (req,res)=>{
+  try {
+    const chefData = await Chef.findAll({
+      include:[{
+        model:Cuisine,
+        include:[Dish]
+      }]
+  })
+    res.status(200).json(chefData)
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+
 
 // CREATE new Chef sign up
 router.post('/', async (req, res) => {
@@ -15,7 +30,6 @@ router.post('/', async (req, res) => {
       zipcode: req.body.zipcode,
       password: req.body.password,
       cuisine_id: req.body.cuisine_id
-
     });
 
     req.session.save(() => {

@@ -4,16 +4,17 @@ const Cuisine = require("./Cuisine");
 const Dish = require("./Dishes");
 const Order = require("./Orders");
 
-Chef.hasOne(Cuisine, {
+Chef.hasMany(Cuisine, {
     foreignKey: "chef_id",
 });
 Cuisine.belongsTo(Chef, {
     foreignKey: "chef_id",
+    onDelete:"CASCADE"
 });
 
 Cuisine.hasMany(Dish, {
   foreignKey: "cuisine_id",
-    //onDelete: "CASCADE"
+  onDelete: "CASCADE"
 });
 
 Dish.belongsTo(Cuisine, {
