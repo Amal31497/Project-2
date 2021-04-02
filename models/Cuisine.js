@@ -31,7 +31,7 @@ Cuisine.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'cusine',
+    modelName: 'cuisine',
   }
 );
 

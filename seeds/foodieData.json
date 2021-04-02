@@ -6,9 +6,9 @@
         "address" : "1720-166th St. Ct. East",
         "city" : "Spanaway",
          "state" : "Wa",
-        "phone_number" : "360-325-1819",
+        "phone_number" : "3603251819",
         "zipcode" : 98387,
-        "password" : "1234"
+        "password" : "12345678"
     },
     {
         "email" : "wildbirdiedog@gmail.com",
@@ -17,8 +17,8 @@
         "address" : "1897-176th St. Ct. East",
         "city" : "Tacoma",
         "state" : "Wa",
-        "phone_number" : "360-599-1819",
+        "phone_number" : "3605991819",
         "zipcode" : 98387,
-        "password" : "4567"
+        "password" : "45678923"
     }
 ]

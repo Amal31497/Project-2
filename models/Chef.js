@@ -43,7 +43,7 @@ Chef.init(
             type: DataTypes.STRING,
         },
         phone_number: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         zipcode: {
@@ -55,13 +55,6 @@ Chef.init(
             allowNull: false,
             validate: {
                 len: [8],
-            },
-        },
-        cuisine_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: "cuisine",
-                key: "id",
             },
         },
     },
