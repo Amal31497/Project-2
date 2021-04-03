@@ -53,9 +53,7 @@ Chef.init(
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [8],
-            },
+            
         },
     },
     {

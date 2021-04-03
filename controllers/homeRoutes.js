@@ -34,7 +34,7 @@ router.get('/login', (req,res) => {
 
 router.get('/chef-signup', (req,res) => {
     if (req.session.logged_in) {
-        res.redirect('/homepage');
+        res.redirect('/chef-signup');
         return;
     }
 

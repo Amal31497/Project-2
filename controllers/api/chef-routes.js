@@ -19,23 +19,12 @@ router.get('/',async (req,res)=>{
 // CREATE new Chef sign up
 router.post('/', async (req, res) => {
   try {
-    const dbChefData = await Chef.create({
-      email: req.body.email,
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      address: req.body.address,
-      city: req.body.city,
-      state: req.body.state,
-      phone_number: req.body.phone_number,
-      zipcode: req.body.zipcode,
-      password: req.body.password,
-      cuisine_id: req.body.cuisine_id
-    });
+    const ChefData = await Chef.create(req.body);
 
     req.session.save(() => {
       req.session.loggedIn = true;
 
-      res.status(200).json(dbChefData);
+      res.status(200).json(ChefData);
     });
   } catch (err) {
     console.log(err);
