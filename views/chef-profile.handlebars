@@ -1,0 +1,88 @@
+<div>
+    <div class="hero-image">
+        <div class="logo">
+            <div class="container">
+                <img src="./Assets/logo.png" alt="Italian Trulli" style="width:175px;height:175px;">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-xl">
+        <div class="row" id="chefs"></div>
+        <h2 span>WELCOME CHEF!</h2>
+        <h4 span>Let's get you started</h4>
+    </div>
+
+
+    <div class="container-xl">
+        <form>
+            <div class="form-group">
+                <label>Tell us a bit about yourself</label>
+                <textarea class="form-control" id="chefBio" rows="7"
+                    placeholder="Where are you from? What inspires you to cook?"></textarea>
+            </div>
+
+            <label id="chefPhoto" class="uploadPhoto">Upload your profile photo</label>
+            <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
+
+            <br></br>
+
+            <h4 span>What's on your menu?</h4>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputFirstName">Dish Name</label>
+                    <input type="text" class="form-control" id="dishName" placeholder="Dish Name">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label id="upload-label" for="upload" class="uploadPhoto">Upload your dish photo</label>
+                    <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label>Description</label>
+                <textarea class="form-control" id="dishDescription" rows="5"></textarea>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="meat" value="option1">
+                <label class="form-check-label">Has Meat</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="gluten" value="option2">
+                <label class="form-check-label">Has Gluten</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="dairy" value="option2">
+                <label class="form-check-label">Has Dairy</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="nuts" value="option2">
+                <label class="form-check-label">Has Nuts</label>
+            </div>
+            
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="shellfish" value="option2">
+                <label class="form-check-label">Has Shellfish</label>
+            </div>
+
+            <div class="row">
+                <button id="addMore" class="btn btn-secondary">Add More Dish</button>
+            </div>
+
+            <div class="row">
+                <button type="submit" class="btn btn-dark">Submit</button>
+            </div>
+    </div>
+
+
+
+    </form>
+
+</div>
