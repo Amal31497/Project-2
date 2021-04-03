@@ -7,9 +7,9 @@ const foodieRoutes = require('./foodie-routes');
 const orderRoutes = require('./order-routes');
 
 router.use('/chefs', chefRoutes);
-//router.use('/cuisines', cuisineRoutes);
+router.use('/cuisines', cuisineRoutes);
 router.use('/dishes', dishRoutes);
-//router.use('/foodies', foodieRoutes);
-//router.use('/orders', orderRoutes);
+router.use('/foodies', foodieRoutes);
+router.use('/orders', orderRoutes);
 
 module.exports = router;
