@@ -1,17 +1,11 @@
 const router = require('express').Router();
+const withAuth = require('../../utils/auth');
 const { Cuisine, Chef } = require('../../models');
 
 // GET all Cuisine
 router.get('/', async (req, res) => {
     try {
-        const cuisineData = await Cuisine.findAll({
-            include: [
-                {
-                    model: Chef,
-                    attributes: ['first_name', 'last_name', 'email', 'zipcode']
-                }
-            ]
-        });
+        const cuisineData = await Cuisine.findAll();
         res.status(200).json(cuisineData)
     } catch (err) {
         res.status(500).json(err);
@@ -19,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET a single Cuisine 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const cuisineData = await Cuisine.findByPk(req.params.id, {
             include: [
@@ -41,7 +35,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // CREATE a Cuisine
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const cuisineData = await Cuisine.create(req.body);
 
@@ -52,7 +46,7 @@ router.post('/', async (req, res) => {
 });
 
 // UPDATE a Cuisine
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const cuisineData = await Cuisine.update(req.body, {
             where: {
@@ -71,7 +65,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // DELETE a Cuisine
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const cuisineData = await Cuisine.destroy({
             where: {
