@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
         const foodieData = await Foodie.create(req.body);
 
         req.sessions.save(() => {
-            req.session.logged_in = true;
+            req.session.loggedIn = true;
 
             res.status(200).json(foodieData);
         });
@@ -35,7 +35,7 @@ router.post('/login', async (req, res) => {
 
         req.session.save(() => {
             req.session.foodie_id = foodieData.id;
-            req.session.logged_in = true;
+            req.session.loggedIn = true;
 
             res.json({ user: foodieData, message: 'You are now logged in!' });
         });
@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
 
 // POST to logout
 router.post('/logout', (req, res) => {
-    if (req.session.logged_in) {
+    if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
         });

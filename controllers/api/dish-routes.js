@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../../utils/auth');
 const { Dish, Cuisine } = require('../../models');
 
 // GET all Dishes
@@ -12,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET a single Dish
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const dishData = await Dish.findByPk(req.params.id, {
             include: [
@@ -34,7 +35,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // CREATE a Dish
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const dishData = await Dish.create(req.body);
 
@@ -45,7 +46,7 @@ router.post('/', async (req, res) => {
 });
 
 // UPDATE a Dish
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const dishData = await Dish.update(req.body, {
             where: {
@@ -64,7 +65,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // DELETE a Dish
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const dishData = await Dish.destroy({
             where: {
