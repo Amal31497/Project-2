@@ -4,17 +4,7 @@ const { Foodie } = require('../../models');
 // POST to create Foodie
 router.post('/', async (req, res) => {
     try {
-        const foodieData = await Foodie.create({
-            email: req.body.email,
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            address: req.body.address,
-            city: req.body.city,
-            state: req.body.state,
-            phone_number: req.body.phone_number,
-            zipcode: req.body.zipcode,
-            password: req.body.password,
-        });
+        const foodieData = await Foodie.create(req.body);
 
         req.sessions.save(() => {
             req.session.logged_in = true;

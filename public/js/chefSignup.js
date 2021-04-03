@@ -1,7 +1,6 @@
 
 const signupFormHandler = async (event) => {
     event.preventDefault();
-    console.log(" Click CVlikck");
     const email = document.querySelector('#inputEmail').value.trim();
     const first_name = document.querySelector('#inputFirstName').value.trim();
     const last_name = document.querySelector('#inputLastName').value.trim();
