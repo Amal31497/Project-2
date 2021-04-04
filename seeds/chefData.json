@@ -1,26 +1,24 @@
 [
     {
         "email" : "kodiakshuksan@yahoo.com",
+        "password" : "1234",
         "first_name" : "Jenni",
-        "last_name" : "Detmering",
+        "phone_number" : "3603251819",
         "address" : "1720-166th St. Ct. East",
         "city" : "Spanaway",
         "state" : "Wa",
-        "phone_number" : "3603251819",
         "zipcode" : 98387,
-        "password" : "1234",
         "cuisine_id" : 1
     },
     {
         "email" : "wildbirdiedog@gmail.com",
+        "password" : "4567",
         "first_name" : "Greg",
-        "last_name" : "Harris",
+        "phone_number" : "3605991819",
         "address" : "1897-176th St. Ct. East",
         "city" : "Tacoma",
         "state" : "Wa",
-        "phone_number" : "3605991819",
         "zipcode" : 98387,
-        "password" : "4567",
         "cuisine_id" : 2
     }
 ]
