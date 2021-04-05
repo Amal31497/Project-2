@@ -22,38 +22,41 @@ router.get('/', async (req,res)=>{
     }
 })
 
-router.get('/chef-profile', withAuth, async (req, res) => {
-    try {
-      // Find the logged in user based on the session ID
-      const chefData = await Chef.findByPk(req.session.id,{
-          
-      });
+// router.get('/chef-profile', withAuth, async (req, res) => {
+//     try {
+//       // Find the logged in user based on the session ID
+//       const chefData = await Chef.findByPk(req.session.user_id,{
+//         attributes: { exclude: ['password'] },
+//         include: [{ 
+//             model: Cuisine,
+//             include:[Dish]
+//         }],
+//       });
   
-    //   const chef = chefData.map((chef) => chef.get({ plain: true }));
+//       const chef = chefData.map((chef) => chef.get({ plain: true }));
   
-    //   res.render('chef-profile', {
-    //     ...chef,
-    //     logged_in: true
-    //   });
-    console.log(chefData)
-    res.send(chefData)
-    } catch (err) {
-      res.status(500).json(err);
-    }
-});
+//       res.render('chef-profile', {
+//         ...chef,
+//         logged_in: true
+//       });
+
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+// });
 
 
 router.get('/login', (req,res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         res.redirect('/');
         return;
-    }
+    } 
 
     res.render('login')
 })
 
 router.get('/chef-signup', (req,res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         res.redirect('/');
         return;
     }
@@ -62,7 +65,7 @@ router.get('/chef-signup', (req,res) => {
 })
 
 router.get('/foodie-signup', (req,res)=>{
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         res.redirect('/');
         return;
     }

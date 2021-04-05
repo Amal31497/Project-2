@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Chef,Cuisine,Dish } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-router.get('/',async (req,res)=>{
+router.get('/', async (req,res)=>{
   try {
     const chefData = await Chef.findAll({
       include:[{
@@ -22,7 +23,8 @@ router.post('/', async (req, res) => {
     const ChefData = await Chef.create(req.body);
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.user_id = ChefData.id;
+      req.session.logged_in = true;
 
       res.status(200).json(ChefData);
     });
@@ -61,7 +63,8 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.user_id = dbChefData.id
+      req.session.logged_in = true;
 
       res
         .status(200)
@@ -74,8 +77,8 @@ router.post('/login', async (req, res) => {
 });
 
 // Logout
-router.post('/logout', (req, res) => {
-  if (req.session.loggedIn) {
+router.post('/logout', withAuth , (req, res) => {
+  if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
     });

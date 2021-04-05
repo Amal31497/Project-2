@@ -1,7 +1,7 @@
 [
     {
         "email" : "kodiakshuksan@yahoo.com",
-        "password" : "1234",
+        "password" : "password",
         "first_name" : "Jenni",
         "phone_number" : "3603251819",
         "address" : "1720-166th St. Ct. East",
@@ -12,7 +12,7 @@
     },
     {
         "email" : "wildbirdiedog@gmail.com",
-        "password" : "4567",
+        "password" : "password",
         "first_name" : "Greg",
         "phone_number" : "3605991819",
         "address" : "1897-176th St. Ct. East",
@@ -20,6 +20,50 @@
         "state" : "Wa",
         "zipcode" : 98387,
         "cuisine_id" : 2
+    },
+    {
+        "email" : "amalj2426@gmail.com",
+        "password" : "password",
+        "first_name" : "Amal",
+        "phone_number" : "3605991832",
+        "address" : "1400 N 33rd St",
+        "city" : "Spokane",
+        "state" : "Wa",
+        "zipcode" : 98387,
+        "cuisine_id" : 4
+    },
+    {
+        "email" : "hellokitty@gmail.com",
+        "password" : "password",
+        "first_name" : "Kitty",
+        "phone_number" : "4358837262",
+        "address" : "1830 56th St SE",
+        "city" : "Olympia",
+        "state" : "Wa",
+        "zipcode" : 98398,
+        "cuisine_id" : 2
+    },
+    {
+        "email" : "mikeymouse@gmail.com",
+        "password" : "password",
+        "first_name" : "Mikey",
+        "phone_number" : "439981087",
+        "address" : "45th ST SW",
+        "city" : "Seatle",
+        "state" : "Wa",
+        "zipcode" : 98223,
+        "cuisine_id" : 5
+    },
+    {
+        "email" : "testuserchef@gmail.com",
+        "password" : "password",
+        "first_name" : "Best Chef",
+        "phone_number" : "9981022033",
+        "address" : "4430 N East Way",
+        "city" : "Bothell",
+        "state" : "Wa",
+        "zipcode" : 98023,
+        "cuisine_id" : 4
     }
 ]
 
