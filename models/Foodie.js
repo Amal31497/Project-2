@@ -24,15 +24,21 @@ Foodie.init(
                 isEmail: true,
             },
         },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [8],
+            },
+        },
         first_name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        last_name: {
+        phone_number: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-       
         address: {
             type: DataTypes.STRING,
         },
@@ -42,20 +48,9 @@ Foodie.init(
         state: {
             type: DataTypes.STRING,
         },
-        phone_number: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         zipcode: {
             type: DataTypes.INTEGER,
             allowNull: false,
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [8],
-            },
         },
     },
     {

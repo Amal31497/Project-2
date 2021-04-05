@@ -14,15 +14,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <meta charset="UTF-8">
-    <title>Your Neighbor Chef</p>
-    </title>
+    <title>Your Neighbor Chef</title>
 </head>
 
 <div>
     <div class="hero-image">
         <div class="logo">
             <div class="container">
-                <img src="../assets/logo.png" alt="Italian Trulli" style="width:175px;height:175px;">
+                <a href="index.html"><img src="../assets/logo.png" alt="homepage" style="width:175px;height:175px;"></a>
             </div>
         </div>
     </div>
@@ -30,12 +29,12 @@
 
     <div class="container-xl">
         <div class="row" id="chefs"></div>
-        <h2 span>WELCOME CHEF!</h2>
-        <h4 span>Let's get you started</h4>
+        <h2>WELCOME CHEF!</h2>
+        <h4>Let's get you started</h4>
     </div>
 
 
-    <div class="container-xl">
+    <div class="container">
         <form>
             <div class="form-group">
                 <label>Tell us a bit about yourself</label>
@@ -43,16 +42,16 @@
                     placeholder="Where are you from? What inspires you to cook?"></textarea>
             </div>
 
-            <label id="chefPhoto" class="uploadPhoto">Upload your profile photo</label>
+            <label class="uploadPhoto">Upload your profile photo</label>
             <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
 
             <br></br>
 
-            <h4 span>What's on your menu?</h4>
-            <div class="form-row">
+            <h4>What's on your menu?</h4>
+            <div class="form-row dish">
                 <div class="form-group col-md-6">
                     <label for="inputFirstName">Dish Name</label>
-                    <input type="text" class="form-control" id="dishName" placeholder="Dish Name">
+                    <input type="text" class="form-control" id="dishName">
                 </div>
 
                 <div class="col-md-6 mb-3">
@@ -65,6 +64,11 @@
             <div class="form-group">
                 <label>Description</label>
                 <textarea class="form-control" id="dishDescription" rows="5"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Which Cuisine Does This Dish Belong To?</label>
+                <input type="text" class="form-control" id="inputCuisine" placeholder="Cuisine">
             </div>
 
             <div class="form-check form-check-inline">
@@ -86,7 +90,7 @@
                 <input class="form-check-input" type="checkbox" id="nuts" value="option2">
                 <label class="form-check-label">Has Nuts</label>
             </div>
-            
+
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="checkbox" id="shellfish" value="option2">
                 <label class="form-check-label">Has Shellfish</label>
@@ -109,15 +113,10 @@
 </div>
 
 <footer>
-    <div class="container">
-        <div class="copyright">
-            © 2021 Your Neighbor Chef. All rights reserved.
-        </div>
+    <div class="copyright">
+        © 2021 Your Neighbor Chefs. All rights reserved.
     </div>
 </footer>
-
-
-
 
 </body>
 

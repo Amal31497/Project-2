@@ -24,15 +24,19 @@ Chef.init(
                 isEmail: true,
             },
         },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+
+        },
         first_name: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        last_name: {
+        phone_number: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-       
         address: {
             type: DataTypes.STRING,
         },
@@ -42,18 +46,9 @@ Chef.init(
         state: {
             type: DataTypes.STRING,
         },
-        phone_number: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
         zipcode: {
             type: DataTypes.INTEGER,
             allowNull: false,
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            
         },
     },
     {
