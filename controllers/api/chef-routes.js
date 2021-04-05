@@ -15,7 +15,6 @@ router.get('/',async (req,res)=>{
   }
 })
 
-
 // CREATE new Chef sign up
 router.post('/', async (req, res) => {
   try {
@@ -31,9 +30,6 @@ router.post('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
-
 
 // Login
 router.post('/login', async (req, res) => {

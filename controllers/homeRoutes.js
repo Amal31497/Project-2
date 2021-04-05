@@ -2,19 +2,20 @@ const router = require('express').Router();
 const { Chef, Cuisine, Dish } = require('../models')
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req,res)=>{
+// GET ALL Chefs
+router.get('/', async (req, res) => {
     try {
 
         const chefData = await Chef.findAll({
-            include:[{
-              model:Cuisine,
-              include:[Dish]
+            include: [{
+                model: Cuisine,
+                include: [Dish]
             }]
         })
 
         const chefs = chefData.map((chef) => chef.get({ plain: true }));
 
-        res.render('homepage',{
+        res.render('homepage', {
             chefs
         })
     } catch (err) {
@@ -22,28 +23,27 @@ router.get('/', async (req,res)=>{
     }
 })
 
+// GET Chef Profile
 router.get('/chef-profile', withAuth, async (req, res) => {
     try {
-      // Find the logged in user based on the session ID
-      const chefData = await Chef.findByPk(req.session.id,{
-          
-      });
-  
-    //   const chef = chefData.map((chef) => chef.get({ plain: true }));
-  
-    //   res.render('chef-profile', {
-    //     ...chef,
-    //     logged_in: true
-    //   });
-    console.log(chefData)
-    res.send(chefData)
+        const chefData = await Chef.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Cuisine }],
+        });
+
+        const chef = chefData.map((chef) => chef.get({ plain: true }));
+
+        res.render('chef-profile', {
+            ...chef,
+            logged_in: true
+        });
     } catch (err) {
-      res.status(500).json(err);
+        res.status(500).json(err);
     }
 });
 
-
-router.get('/login', (req,res) => {
+// LOGIN 
+router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
@@ -52,7 +52,8 @@ router.get('/login', (req,res) => {
     res.render('login')
 })
 
-router.get('/chef-signup', (req,res) => {
+// GET Chef Signup
+router.get('/chef-signup', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
@@ -61,7 +62,8 @@ router.get('/chef-signup', (req,res) => {
     res.render('chef-signup')
 })
 
-router.get('/foodie-signup', (req,res)=>{
+// GET Foodie Signup
+router.get('/foodie-signup', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
@@ -69,6 +71,5 @@ router.get('/foodie-signup', (req,res)=>{
 
     res.render('foodie-signup')
 })
-
 
 module.exports = router;
