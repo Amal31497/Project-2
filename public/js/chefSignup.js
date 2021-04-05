@@ -14,7 +14,7 @@ const signupFormHandler = async (event) => {
     if (email && password) {
       const response = await fetch('api/chefs', {
         method: 'POST',
-        body: JSON.stringify({ email, password, first_name, phone_number, address, city, state, zipcode}),
+        body: JSON.stringify({ email, password, first_name, phone_number, address, city, state, zipcode }),
         headers: { 'Content-Type': 'application/json' },
       });
      

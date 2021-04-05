@@ -44,7 +44,7 @@ router.get('/chef-profile', withAuth, async (req, res) => {
 
 
 router.get('/login', (req,res) => {
-    if (req.session.logged_in) {
+    if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
@@ -53,8 +53,8 @@ router.get('/login', (req,res) => {
 })
 
 router.get('/chef-signup', (req,res) => {
-    if (req.session.logged_in) {
-        res.redirect('/chef-signup');
+    if (req.session.loggedIn) {
+        res.redirect('/');
         return;
     }
 
@@ -62,8 +62,8 @@ router.get('/chef-signup', (req,res) => {
 })
 
 router.get('/foodie-signup', (req,res)=>{
-    if (req.session.logged_in) {
-        res.redirect('/homepage');
+    if (req.session.loggedIn) {
+        res.redirect('/');
         return;
     }
 

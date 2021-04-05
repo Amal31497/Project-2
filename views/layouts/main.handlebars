@@ -63,7 +63,7 @@
             <div class="col top">
                 <button type="button"  class="btn float-right" id="chefSignup"><a class="btn float-right" href="/chef-signup" id="chef_signup">Chef Sign Up</a></button>
                 <button type="button" class="btn  float-right" id="foodieSignup"><a class="btn  float-right" href="/foodie-signup" id="foodie_signup">Foodie Sign Up</a></button>
-                {{#if logged_in}}
+                {{#if loggedIn}}
                 <button type="button" class="btn  float-right" id="logout"><a class="btn  float-right" href="/logout" id="logout">Logout</a></button>
                 {{else}}
                 <button type="button" class="btn float-right" id="login"><a class="btn float-right" href="/login" id="login">Login</a></button>
@@ -83,8 +83,10 @@
             © 2021 Your Neighbor Chef. All rights reserved.
         </div>
     </div>
-    {{#if logged_in}}
+    {{#if loggedIn}}
     <script src="js/logout.js"></script>
+    {{else}}
+    <script src="js/login.js"></script>
     {{/if}}
 
 </body>
