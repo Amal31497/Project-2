@@ -1,7 +1,6 @@
 const router = require('express').Router();
-const path = require('path');
 const { Chef, Cuisine, Dish } = require('../models')
-
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req,res)=>{
     try {
@@ -23,9 +22,30 @@ router.get('/', async (req,res)=>{
     }
 })
 
+router.get('/chef-profile', withAuth, async (req, res) => {
+    try {
+      // Find the logged in user based on the session ID
+      const chefData = await Chef.findByPk(req.session.id,{
+          
+      });
+  
+    //   const chef = chefData.map((chef) => chef.get({ plain: true }));
+  
+    //   res.render('chef-profile', {
+    //     ...chef,
+    //     logged_in: true
+    //   });
+    console.log(chefData)
+    res.send(chefData)
+    } catch (err) {
+      res.status(500).json(err);
+    }
+});
+
+
 router.get('/login', (req,res) => {
     if (req.session.logged_in) {
-        res.redirect('/homepage');
+        res.redirect('/');
         return;
     }
 
