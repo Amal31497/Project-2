@@ -1,8 +1,9 @@
 const router = require('express').Router();
+const withAuth = require('../../utils/auth');
 const { Order } = require('../../models');
 
 // CREATE an order
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const orderData = await Order.create(req.body);
         res.status(200).json(orderData);
@@ -12,7 +13,7 @@ router.post('/', async (req, res) => {
 });
 
 // DELETE an order
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const orderData = await Order.destroy({
             where: { id: req.params.id }

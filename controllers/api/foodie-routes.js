@@ -4,20 +4,10 @@ const { Foodie } = require('../../models');
 // POST to create Foodie
 router.post('/', async (req, res) => {
     try {
-        const foodieData = await Foodie.create({
-            email: req.body.email,
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            address: req.body.address,
-            city: req.body.city,
-            state: req.body.state,
-            phone_number: req.body.phone_number,
-            zipcode: req.body.zipcode,
-            password: req.body.password,
-        });
+        const foodieData = await Foodie.create(req.body);
 
         req.sessions.save(() => {
-            req.session.logged_in = true;
+            req.session.loggedIn = true;
 
             res.status(200).json(foodieData);
         });
@@ -45,7 +35,7 @@ router.post('/login', async (req, res) => {
 
         req.session.save(() => {
             req.session.foodie_id = foodieData.id;
-            req.session.logged_in = true;
+            req.session.loggedIn = true;
 
             res.json({ user: foodieData, message: 'You are now logged in!' });
         });
@@ -57,7 +47,7 @@ router.post('/login', async (req, res) => {
 
 // POST to logout
 router.post('/logout', (req, res) => {
-    if (req.session.logged_in) {
+    if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
         });

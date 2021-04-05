@@ -15,6 +15,7 @@ const signupFormHandler = async (event) => {
       const response = await fetch('api/foodies', {
         method: 'POST',
         body: JSON.stringify({ email, password, first_name, phone_number, address, city, state, zipcode}),
+
         headers: { 'Content-Type': 'application/json' },
       });
      
