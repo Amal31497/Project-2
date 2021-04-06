@@ -4,20 +4,80 @@
 "dish_name" : "Fried Chicken",
 "description" : "American",
 "cuisine_id": 1,
-"has_nuts" : "false",
-"has_dairy" : "false",
-"vegan" : "false",
-"has_gluten" : "true",
-"has_shellfish" : "false"
+"has_nuts" : false,
+"has_dairy" : false,
+"vegan" : true,
+"has_gluten" : false,
+"has_shellfish" : false
 },
 {
 "dish_name": "Chicken Pad Thai",
 "description": "Asian",
 "cuisine_id": 2,
-"has_nuts": "false",
-"has_dairy": "false",
-"vegan": "false",
-"has_gluten": "true",
-"has_shellfish": "false"
+"has_nuts": true,
+"has_dairy": false,
+"vegan": false,
+"has_gluten": true,
+"has_shellfish": false
+},
+{
+    "dish_name": "Beef Teryaki Bowl",
+    "description": "Asian",
+    "cuisine_id": 4,
+    "has_nuts": true,
+    "has_dairy": false,
+    "vegan": false,
+    "has_gluten": true,
+    "has_shellfish": false
+},
+{
+    "dish_name": "Alfredo Pasta",
+    "description": "Italian",
+    "cuisine_id": 4,
+    "has_nuts": true,
+    "has_dairy": true,
+    "vegan": false,
+    "has_gluten": true,
+    "has_shellfish": false
+},
+{
+    "dish_name": "Shrimp tempura",
+    "description": "Asian",
+    "cuisine_id": 5,
+    "has_nuts": true,
+    "has_dairy": false,
+    "vegan": false,
+    "has_gluten": true,
+    "has_shellfish":true
+},
+{
+    "dish_name": "Vegan Loaf",
+    "description": "Asian",
+    "cuisine_id": 1,
+    "has_nuts": false,
+    "has_dairy": false,
+    "vegan": true,
+    "has_gluten": true,
+    "has_shellfish": false
+},
+{
+    "dish_name": "Grilled Veggies with mediterranian spices",
+    "description": "Asian",
+    "cuisine_id": 3,
+    "has_nuts": true,
+    "has_dairy":false,
+    "vegan": true,
+    "has_gluten":false,
+    "has_shellfish": false
+},
+{
+    "dish_name": "Surf n' Turf",
+    "description": "Asian",
+    "cuisine_id": 1,
+    "has_nuts": true,
+    "has_dairy": true,
+    "vegan": false,
+    "has_gluten": true,
+    "has_shellfish": false
 }
 ]

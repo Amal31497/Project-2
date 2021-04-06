@@ -21,7 +21,7 @@ const signupFormHandler = async (event) => {
      
   
       if (response.ok) {
-        document.location.replace('/login');
+        document.location.replace('/');
       } else {
         alert( await response.statusText);
       }
@@ -29,5 +29,5 @@ const signupFormHandler = async (event) => {
 };
 
 
-const submitButton = document.querySelector('#signupbtn');
-submitButton.addEventListener("click", signupFormHandler);
+const submitButton = document.querySelector('.signup-form');
+submitButton.addEventListener("submit", signupFormHandler);

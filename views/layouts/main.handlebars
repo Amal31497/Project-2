@@ -63,19 +63,17 @@
             <div class="col top">
                 <button type="button"  class="btn float-right" id="chefSignup"><a class="btn float-right" href="/chef-signup" id="chef_signup">Chef Sign Up</a></button>
                 <button type="button" class="btn  float-right" id="foodieSignup"><a class="btn  float-right" href="/foodie-signup" id="foodie_signup">Foodie Sign Up</a></button>
-                {{#if loggedIn}}
-                <button type="button" class="btn  float-right" id="logout"><a class="btn  float-right" href="/logout" id="logout">Logout</a></button>
+                {{#if logged_in}}
+                <a class="btn  float-right" href="/chef-profile">Chef Profile</a>
+                <button type="button" class="btn  float-right" id="logout">Logout</button>
                 {{else}}
                 <button type="button" class="btn float-right" id="login"><a class="btn float-right" href="/login" id="login">Login</a></button>
                 {{/if}}
-            </div>
-            
-            {{{body}}}
-
+            </div>  
         </div>
-
-
-
+        <main>
+            {{{body}}}
+        </main>
     </div>
 
     <div class="container">
@@ -88,6 +86,7 @@
     {{else}}
     <script src="js/login.js"></script>
     {{/if}}
+
 
 </body>
 
