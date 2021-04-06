@@ -36,22 +36,23 @@ router.get('/search', async (req, res) => {
 // GET Chef profile and pass data
 router.get('/chef-profile', async (req, res) => {
     try {
-      // Find the logged in user based on the session ID
-      const chefData = await Chef.findByPk(req.session.user_id, {
-        attributes: { exclude: ['password'] },
-        include:[
-          {model:Cuisine,
-          include:[Dish]}
-        ]
-      });
+        // Find the logged in user based on the session ID
+        const chefData = await Chef.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{
+                model: Cuisine,
+                include: [Dish]
+            }],
+        });
 
-      const chef = chefData.get({ plain: true })
+        const chef = chefData.get({ plain: true });
 
-      res.render('chef-profile',{
-          ...chef,
-          logged_in:true
-      })
-  
+        res.render('chef-profile', {
+            ...chef,
+            logged_in: true
+        });
+
+
     } catch (err) {
       res.status(500).json(err);
     }
