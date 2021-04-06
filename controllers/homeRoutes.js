@@ -16,14 +16,16 @@ router.get('/', async (req, res) => {
         const chefs = chefData.map((chef) => chef.get({ plain: true }));
 
         res.render('homepage', {
-            chefs
+            chefs,
+            logged_in: req.session.logged_in 
         })
     } catch (err) {
         res.status(404).json(err)
     }
 })
 
-router.get('/search', async(req,res)=>{
+// GET Search
+router.get('/search', async (req, res) => {
     try {
         res.render('search')
     } catch (err) {
@@ -31,6 +33,7 @@ router.get('/search', async(req,res)=>{
     }
 })
 
+// GET Chef profile and pass data
 router.get('/chef-profile', async (req, res) => {
     try {
       // Find the logged in user based on the session ID
@@ -54,18 +57,18 @@ router.get('/chef-profile', async (req, res) => {
     }
   });
 
-
-// LOGIN 
+// GET Chef Login
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         res.redirect('/chef-profile');
         return;
-    } 
+    }
 
     res.render('login')
 })
 
-router.get('/chef-signup', (req,res) => {
+// GET Chef Signup
+router.get('/chef-signup', (req, res) => {
     if (req.session.logged_in) {
 
         res.redirect('/');
@@ -75,7 +78,8 @@ router.get('/chef-signup', (req,res) => {
     res.render('chef-signup')
 })
 
-router.get('/foodie-signup', (req,res)=>{
+// GET Foodie Signup
+router.get('/foodie-signup', (req, res) => {
     if (req.session.logged_in) {
 
         res.redirect('/');
