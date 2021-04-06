@@ -23,6 +23,14 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/search', async(req,res)=>{
+    try {
+        res.render('search')
+    } catch (err) {
+        res.status(404).json(err)
+    }
+})
+
 // router.get('/chef-profile', withAuth, async (req, res) => {
 //     try {
 //       // Find the logged in user based on the session ID
