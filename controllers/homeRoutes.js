@@ -45,9 +45,12 @@ router.get('/chef-profile', withAuth, async (req, res) => {
             }],
         });
 
-        //const chef = chefData.map((chef) => chef.get({ plain: true }));
+        const chef = chefData.get({ plain: true });
 
-        res.render('chef-profile');
+        res.render('chef-profile', {
+            ...chef,
+            logged_in: true
+        });
 
     } catch (err) {
         res.status(500).json(err);
