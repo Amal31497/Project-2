@@ -31,34 +31,31 @@ router.get('/search', async(req,res)=>{
     }
 })
 
-// router.get('/chef-profile', withAuth, async (req, res) => {
-//     try {
-//       // Find the logged in user based on the session ID
-//       const chefData = await Chef.findByPk(req.session.user_id,{
-//         attributes: { exclude: ['password'] },
-//         include: [{ 
-//             model: Cuisine,
-//             include:[Dish]
-//         }],
-//       });
+router.get('/chef-profile', withAuth, async (req, res) => {
+    try {
+      // Find the logged in user based on the session ID
+      const chefData = await Chef.findByPk(req.session.user_id,{
+        attributes: { exclude: ['password'] },
+        include: [{ 
+            model: Cuisine,
+            include:[Dish]
+        }],
+      });
   
-//       const chef = chefData.map((chef) => chef.get({ plain: true }));
+      //const chef = chefData.map((chef) => chef.get({ plain: true }));
   
-//       res.render('chef-profile', {
-//         ...chef,
-//         logged_in: true
-//       });
+      res.render('chef-profile');
 
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-// });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+});
 
 
 // LOGIN 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/');
+        res.redirect('/chef-profile');
         return;
     } 
 

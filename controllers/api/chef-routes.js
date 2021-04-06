@@ -52,21 +52,16 @@ router.post('/login', async (req, res) => {
     const validPassword = await dbChefData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+      res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
 
     req.session.save(() => {
       req.session.user_id = dbChefData.id
       req.session.logged_in = true;
-
-
-      res
-        .status(200)
-        .json({ user: dbChefData, message: 'You are now logged in!' });
+      res.status(200).json(dbChefData);
     });
+    
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
