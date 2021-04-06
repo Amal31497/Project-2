@@ -16,14 +16,16 @@ router.get('/', async (req, res) => {
         const chefs = chefData.map((chef) => chef.get({ plain: true }));
 
         res.render('homepage', {
-            chefs
+            chefs,
+            logged_in: req.session.logged_in 
         })
     } catch (err) {
         res.status(404).json(err)
     }
 })
 
-router.get('/search', async(req,res)=>{
+// GET Search
+router.get('/search', async (req, res) => {
     try {
         res.render('search')
     } catch (err) {
@@ -31,38 +33,39 @@ router.get('/search', async(req,res)=>{
     }
 })
 
+// GET Chef Profile
 router.get('/chef-profile', withAuth, async (req, res) => {
     try {
-      // Find the logged in user based on the session ID
-      const chefData = await Chef.findByPk(req.session.user_id,{
-        attributes: { exclude: ['password'] },
-        include: [{ 
-            model: Cuisine,
-            include:[Dish]
-        }],
-      });
-  
-      //const chef = chefData.map((chef) => chef.get({ plain: true }));
-  
-      res.render('chef-profile');
+        // Find the logged in user based on the session ID
+        const chefData = await Chef.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{
+                model: Cuisine,
+                include: [Dish]
+            }],
+        });
+
+        //const chef = chefData.map((chef) => chef.get({ plain: true }));
+
+        res.render('chef-profile');
 
     } catch (err) {
-      res.status(500).json(err);
+        res.status(500).json(err);
     }
 });
 
-
-// LOGIN 
+// GET Chef Login
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
         res.redirect('/chef-profile');
         return;
-    } 
+    }
 
     res.render('login')
 })
 
-router.get('/chef-signup', (req,res) => {
+// GET Chef Signup
+router.get('/chef-signup', (req, res) => {
     if (req.session.logged_in) {
 
         res.redirect('/');
@@ -72,7 +75,8 @@ router.get('/chef-signup', (req,res) => {
     res.render('chef-signup')
 })
 
-router.get('/foodie-signup', (req,res)=>{
+// GET Foodie Signup
+router.get('/foodie-signup', (req, res) => {
     if (req.session.logged_in) {
 
         res.redirect('/');

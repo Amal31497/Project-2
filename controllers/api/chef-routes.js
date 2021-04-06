@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Chef,Cuisine,Dish } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// GET all Chefs
 router.get('/', async (req,res)=>{
   try {
     const chefData = await Chef.findAll({
@@ -33,7 +34,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Login
+// POST Chef Login
 router.post('/login', async (req, res) => {
   try {
     const dbChefData = await Chef.findOne({
@@ -68,7 +69,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Logout
+// POST Chef Logout
 router.post('/logout', withAuth , (req, res) => {
   if (req.session.logged_in) {
 
