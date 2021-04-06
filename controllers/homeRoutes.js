@@ -33,8 +33,8 @@ router.get('/search', async (req, res) => {
     }
 })
 
-// GET Chef Profile
-router.get('/chef-profile', withAuth, async (req, res) => {
+// GET Chef profile and pass data
+router.get('/chef-profile', async (req, res) => {
     try {
         // Find the logged in user based on the session ID
         const chefData = await Chef.findByPk(req.session.user_id, {
@@ -52,10 +52,11 @@ router.get('/chef-profile', withAuth, async (req, res) => {
             logged_in: true
         });
 
+
     } catch (err) {
-        res.status(500).json(err);
+      res.status(500).json(err);
     }
-});
+  });
 
 // GET Chef Login
 router.get('/login', (req, res) => {
