@@ -16,6 +16,27 @@ router.get('/', async (req,res)=>{
   }
 })
 
+router.get('/:id', async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const chefData = await Chef.findOne({
+      where:{
+        id:req.params.id
+      },
+      attributes: { exclude: ['password'] },
+      include:[
+        {model:Cuisine,
+        include:[Dish]}
+      ]
+    });
+    console.log(chefData)
+    res.status(200).json(chefData)
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // CREATE new Chef sign up
 router.post('/', async (req, res) => {
   try {

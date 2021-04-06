@@ -31,25 +31,28 @@ router.get('/search', async(req,res)=>{
     }
 })
 
-router.get('/chef-profile', withAuth, async (req, res) => {
+router.get('/chef-profile', async (req, res) => {
     try {
       // Find the logged in user based on the session ID
-      const chefData = await Chef.findByPk(req.session.user_id,{
+      const chefData = await Chef.findByPk(req.session.user_id, {
         attributes: { exclude: ['password'] },
-        include: [{ 
-            model: Cuisine,
-            include:[Dish]
-        }],
+        include:[
+          {model:Cuisine,
+          include:[Dish]}
+        ]
       });
-  
-      //const chef = chefData.map((chef) => chef.get({ plain: true }));
-  
-      res.render('chef-profile');
 
+      const chef = chefData.get({ plain: true })
+
+      res.render('chef-profile',{
+          ...chef,
+          logged_in:true
+      })
+  
     } catch (err) {
       res.status(500).json(err);
     }
-});
+  });
 
 
 // LOGIN 
