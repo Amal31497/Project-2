@@ -2,19 +2,20 @@ const router = require('express').Router();
 const { Chef, Cuisine, Dish } = require('../models')
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req,res)=>{
+// GET ALL Chefs
+router.get('/', async (req, res) => {
     try {
 
         const chefData = await Chef.findAll({
-            include:[{
-              model:Cuisine,
-              include:[Dish]
+            include: [{
+                model: Cuisine,
+                include: [Dish]
             }]
         })
 
         const chefs = chefData.map((chef) => chef.get({ plain: true }));
 
-        res.render('homepage',{
+        res.render('homepage', {
             chefs
         })
     } catch (err) {
@@ -46,8 +47,9 @@ router.get('/', async (req,res)=>{
 // });
 
 
-router.get('/login', (req,res) => {
-    if (req.session.logged_in) {
+// LOGIN 
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
         res.redirect('/');
         return;
     } 
@@ -57,6 +59,7 @@ router.get('/login', (req,res) => {
 
 router.get('/chef-signup', (req,res) => {
     if (req.session.logged_in) {
+
         res.redirect('/');
         return;
     }
@@ -66,12 +69,12 @@ router.get('/chef-signup', (req,res) => {
 
 router.get('/foodie-signup', (req,res)=>{
     if (req.session.logged_in) {
+
         res.redirect('/');
         return;
     }
 
     res.render('foodie-signup')
 })
-
 
 module.exports = router;

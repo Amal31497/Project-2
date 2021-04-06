@@ -16,7 +16,6 @@ router.get('/', async (req,res)=>{
   }
 })
 
-
 // CREATE new Chef sign up
 router.post('/', async (req, res) => {
   try {
@@ -33,9 +32,6 @@ router.post('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
-
 
 // Login
 router.post('/login', async (req, res) => {
@@ -66,6 +62,7 @@ router.post('/login', async (req, res) => {
       req.session.user_id = dbChefData.id
       req.session.logged_in = true;
 
+
       res
         .status(200)
         .json({ user: dbChefData, message: 'You are now logged in!' });
@@ -79,6 +76,7 @@ router.post('/login', async (req, res) => {
 // Logout
 router.post('/logout', withAuth , (req, res) => {
   if (req.session.logged_in) {
+
     req.session.destroy(() => {
       res.status(204).end();
     });
