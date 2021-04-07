@@ -21,6 +21,29 @@ router.get('/', async (req, res) => {
     }
 })
 
+// GET Chef Page(Chef-profile future name)
+router.get('/chef-page', withAuth, async(req,res)=>{
+    try {
+        // Find the logged in user based on the session ID
+        const chefData = await Chef.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{
+                model: Cuisine,
+                include: [Dish]
+            }],
+        });
+
+        const chef = chefData.get({ plain: true });
+
+        res.render('chef-page', {
+            ...chef,
+            logged_in: true
+        });
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
 // GET Search
 router.get('/search', async (req, res) => {
     try {
