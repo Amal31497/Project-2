@@ -15,8 +15,9 @@ Dishes.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    dish_description: {
       type: DataTypes.STRING,
+      allowNull:true
     },
     cuisine_id: {
       type: DataTypes.INTEGER,

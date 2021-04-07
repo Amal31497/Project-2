@@ -2,7 +2,7 @@
 [
     {   
         "dish_name" : "Fried Chicken",
-        "description" : "American",
+        "dish_description" : "American",
         "cuisine_id": 1,
         "has_nuts" : false,
         "has_dairy" : false,
@@ -12,7 +12,7 @@
     },
     {
         "dish_name": "Chicken Pad Thai",
-        "description": "Asian",
+        "dish_description": "Asian",
         "cuisine_id": 2,
         "has_nuts": true,
         "has_dairy": false,
@@ -22,7 +22,7 @@
     },
     {
         "dish_name": "Beef Teryaki Bowl",
-        "description": "Asian",
+        "dish_description": "Asian",
         "cuisine_id": 4,
         "has_nuts": true,
         "has_dairy": false,
@@ -32,7 +32,7 @@
     },
     {
         "dish_name": "Alfredo Pasta",
-        "description": "Italian",
+        "dish_description": "Italian",
         "cuisine_id": 4,
         "has_nuts": true,
         "has_dairy": true,
@@ -42,7 +42,7 @@
     },
     {
         "dish_name": "Shrimp tempura",
-        "description": "Asian",
+        "dish_description": "Asian",
         "cuisine_id": 5,
         "has_nuts": true,
         "has_dairy": false,
@@ -52,7 +52,7 @@
     },
     {
         "dish_name": "Vegan Loaf",
-        "description": "Asian",
+        "dish_description": "Asian",
         "cuisine_id": 1,
         "has_nuts": false,
         "has_dairy": false,
@@ -62,7 +62,7 @@
     },
     {
         "dish_name": "Grilled Veggies with mediterranian spices",
-        "description": "Asian",
+        "dish_description": "Asian",
         "cuisine_id": 3,
         "has_nuts": true,
         "has_dairy":false,
@@ -72,7 +72,7 @@
     },
     {
         "dish_name": "Surf n' Turf",
-        "description": "Asian",
+        "dish_description": "Asian",
         "cuisine_id": 1,
         "has_nuts": true,
         "has_dairy": true,
