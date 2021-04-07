@@ -25,26 +25,26 @@ router.get('/', async (req, res) => {
 })
 
 // GET Search
-router.get('/search', async (req, res) => {
-    try {
-        const searchChef = await Cuisine.findByPk(req.session.id, {
-            include: [{
-                Chef,
-                attributes: ['first_name', 'description', 'zipcode'],
-                include: [Dish]
-            }],
-        }),
+// router.get('/search', async (req, res) => {
+//     try {
+//         const searchChef = await Cuisine.findByPk(req.session.id, {
+//             include: [{
+//                 Chef,
+//                 attributes: ['first_name', 'description', 'zipcode'],
+//                 include: [Dish]
+//             }],
+//         }),
 
-        const chefs = searchChef.get({ plain: true });
+//         const chefs = searchChef.get({ plain: true });
 
-        res.render('results', {
-            ...chefs
-        },
-        )
-    } catch (err) {
-        res.status(404).json(err)
-    }
-})
+//         res.render('results', {
+//             ...chefs
+//         },
+//         )
+//     } catch (err) {
+//         res.status(404).json(err)
+//     }
+// })
 
 // GET Chef profile and pass data
 router.get('/chef-profile', async (req, res) => {

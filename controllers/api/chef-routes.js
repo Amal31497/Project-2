@@ -2,6 +2,28 @@ const router = require('express').Router();
 const { Chef,Cuisine,Dish } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+const multer = require ('multer');
+const uuid = require ('uuid').v4;
+
+const express = require('express');
+const path = require('path');
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) =>{
+    cb(null, 'uploads');
+  },
+  filename: (req, file, cb) => {
+    const { originalname} = file;
+    cb(null, `${uuid()}-${originalname}`);
+  }
+});
+const upload = multer({storage});
+
+router.post('/upload', upload.array('avatar'), (req, res) => {
+  return res.json({ status: 'OK', uploaded: req.files.length});
+});
+
+
 // GET all Chefs
 router.get('/', async (req,res)=>{
   try {
