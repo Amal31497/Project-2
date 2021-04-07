@@ -1,5 +1,4 @@
 const Sequelize = require('sequelize');
-// Set up dotenv *UNCOMMENT*
 require('dotenv').config();
 
 let sequelize;
