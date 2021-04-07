@@ -7,6 +7,16 @@
 
 
     <div class="container-xl">
+
+        <label id="chefPhoto" class="uploadPhoto">Upload your profile photo</label>
+        <form action="/api/chefs/upload" method="POST" enctype="multipart/form-data">
+            <input id="upload" type="file" name="avatar"  class="form-control border-0" multiple >
+            <button>Submit</button>
+        </form>
+
+
+
+
         <form>
             <div class="form-group">
                 <label>Tell us a bit about yourself</label>
