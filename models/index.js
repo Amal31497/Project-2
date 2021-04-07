@@ -3,6 +3,7 @@ const Foodie = require("./Foodie");
 const Cuisine = require("./Cuisine");
 const Dish = require("./Dishes");
 const Order = require("./Orders");
+const Image = require("./Image");
 
 Chef.hasMany(Cuisine, {
     foreignKey: "chef_id",
@@ -29,5 +30,16 @@ Foodie.hasMany(Order, {
 Order.belongsTo(Foodie, {
     foreignKey: "foodie_id",
 });
-
-module.exports = { Chef, Foodie, Cuisine, Dish, Order };
+Chef.hasOne(Image,{
+    foreignKey:"chef_id",
+})
+Image.belongsTo(Chef, {
+    foreignKey: "chef_id",
+})
+Dish.hasMany(Image, {
+    foreignKey: "dish_id",
+})
+Image.belongsTo(Dish, {
+    foreignKey: "dish_id",
+})
+module.exports = { Chef, Foodie, Cuisine, Dish, Order,Image };
