@@ -49,6 +49,9 @@ Chef.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        description: {
+            type: DataTypes.STRING,
+        },
     },
     {
         hooks: {

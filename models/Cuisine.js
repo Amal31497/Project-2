@@ -15,9 +15,6 @@ Cuisine.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.STRING,
-    },
     chef_id: {
       type: DataTypes.INTEGER,
       references: {
