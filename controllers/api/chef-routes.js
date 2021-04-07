@@ -112,9 +112,10 @@ router.post('/', async (req, res) => {
 });
 
 // UPDATE(PUT) Chef profile info
-router.put('/:id', async(req,res)=>{
+router.put('/:id', withAuth, async(req,res)=>{
   try {
-    const chefData = await Chef.update(req.body, {
+    const chefData = await Chef.update({chef_description:req.body.chef_description}, 
+      {
       where:{
         id:req.params.id
       }
