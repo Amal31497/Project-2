@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
         res.render('homepage', {
             chefs,
-            logged_in: req.session.logged_in 
+            logged_in: req.session.logged_in
         })
     } catch (err) {
         res.status(404).json(err)
@@ -27,7 +27,20 @@ router.get('/', async (req, res) => {
 // GET Search
 router.get('/search', async (req, res) => {
     try {
-        res.render('search')
+        const searchChef = await Cuisine.findByPk(req.session.id, {
+            include: [{
+                Chef,
+                attributes: ['first_name', 'description', 'zipcode'],
+                include: [Dish]
+            }],
+        }),
+
+        const chefs = searchChef.get({ plain: true });
+
+        res.render('results', {
+            ...chefs
+        },
+        )
     } catch (err) {
         res.status(404).json(err)
     }
@@ -54,9 +67,9 @@ router.get('/chef-profile', async (req, res) => {
 
 
     } catch (err) {
-      res.status(500).json(err);
+        res.status(500).json(err);
     }
-  });
+});
 
 // GET Chef Login
 router.get('/login', (req, res) => {
