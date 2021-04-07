@@ -1,16 +1,17 @@
 const search = async (event) => {
-    event.preventDeafault();
+    event.preventDefault();
+
+    console.log("Clicked");
+
     const zipCode = document.querySelector("#zipcode").value.trim();
-    const cuisine = document.querySelector("#cuisine").value.trim();
+    const cuisine = document.querySelector("#cuisine").value;
 
     console.log(zipCode);
     console.log(cuisine);
 
     if (zipCode && cuisine) {
         const response = await fetch(`api/search/${cuisine}/${zipCode}`, {
-            method: 'GET',
-            body: JSON.stringify({ cuisine, zipcode }),
-            headers: { 'Content-Type': 'application/json' },
+            method: 'GET'
         });
 
         if (response.ok) {
