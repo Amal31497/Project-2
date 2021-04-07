@@ -33,32 +33,33 @@
             </div>
 
             <div class="btn-group">
-                <button type="button" class="btn btn-outline-secondary dropdown-toggle" id="cuisine" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Regional Cuisines
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <button class="dropdown-item" type="button">American</button>
-                    <button class="dropdown-item" type="button">Asian</button>
-                    <button class="dropdown-item" type="button">Mexican</button>
-                    <button class="dropdown-item" type="button">Indian</button>
-                    <button class="dropdown-item" type="button">Mediterranean</button>
-                </div>
+                <select class="form-select cuisine" id="cuisine" style="border-radius:5px; color: gray">
+                    <option selected>Regional Cuisines</option>
+                    <option value="1">American</option>
+                    <option value="2">Asian</option>
+                    <option value="3">Mexican</option>
+                    <option value="4">Indian</option>
+                    <option value="5">Mediterranean</option>
+                </select>
             </div>
 
             <button class="search" id="searchBtn">Search <i class="fa fa-search"></i></button>
-            
+
             <div class="col top">
                 {{#if logged_in}}
                 <a class="btn  float-right" href="/chef-profile">Chef Profile</a>
                 <button type="button" class="btn float-right" id="logout">Logout</button>
                 {{else}}
-                <button type="button" class="btn float-right" id="login"><a class="btn float-right" href="/login" id="login">Login</a></button>
-                <button type="button"  class="btn float-right" id="chefSignup"><a class="btn float-right" href="/chef-signup" id="chef_signup">Chef Sign Up</a></button>
-                <button type="button" class="btn  float-right" id="foodieSignup"><a class="btn  float-right" href="/foodie-signup" id="foodie_signup">Foodie Sign Up</a></button>
+                <button type="button" class="btn float-right" id="login"><a class="btn float-right" href="/login"
+                        id="login">Login</a></button>
+                <button type="button" class="btn float-right" id="chefSignup"><a class="btn float-right"
+                        href="/chef-signup" id="chef_signup">Chef Sign Up</a></button>
+                <button type="button" class="btn  float-right" id="foodieSignup"><a class="btn  float-right"
+                        href="/foodie-signup" id="foodie_signup">Foodie Sign Up</a></button>
                 {{/if}}
-            </div>  
+            </div>
         </div>
-        
+
         <main>
             {{{body}}}
         </main>
@@ -73,6 +74,7 @@
     <script src="js/logout.js"></script>
     {{/if}}
 
+    <script src="js/search.js"></script>
 
 </body>
 
