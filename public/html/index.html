@@ -27,36 +27,18 @@
     </div>
 
     <div class="container">
-        <div class="row">
+        <div class="row searchOption">
             <div class="form-box">
                 <input type="text" class="search-box" id="zipcode" placeholder="Enter Your Zipcode">
             </div>
 
-            <div class="btn-group">
-                <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Regional Cuisines
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <button class="dropdown-item" type="button">American</button>
-                    <button class="dropdown-item" type="button">Asian</button>
-                    <button class="dropdown-item" type="button">Mexican</button>
-                    <button class="dropdown-item" type="button">Indian</button>
-                    <button class="dropdown-item" type="button">Mediterranean</button>
-                </div>
-            </div>
-
-            <div class="btn-group">
-                <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">Dietary Choices
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <button class="dropdown-item" type="button">Vegan</button>
-                    <button class="dropdown-item" type="button">Gluten Free</button>
-                    <button class="dropdown-item" type="button">Dairy Free</button>
-                    <button class="dropdown-item" type="button">Nut Free</button>
-                    <button class="dropdown-item" type="button">Shellfish Free</button>
-                </div>
-            </div>
+            <select class="form-select cuisine" style="border-radius:5px; color: gray">
+                <option id="american">American</option>
+                <option id="asian">Asian</option>
+                <option id="mexican">Mexican</option>
+                <option id="indian">Indian</option>
+                <option id="mediterranean">Mediterranean</option>
+            </select>
 
             <button class="search">Search <i class="fa fa-search"></i></button>
 
@@ -69,60 +51,65 @@
     </div>
 
     <div class="container">
-        <div class="row" id="week_chef"></div>
-        <h2>CHEF OF THE WEEK</h2>
-        <div class="card col-md-12">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="../assets/placeholder.jpeg" alt="Chef profile photo"
-                        style="width:350px;height:350px; margin-left:-7px; margin-bottom: 7px;">
-                </div>
-                <div class="col-md-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Chef Name</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi ut
-                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                            esse
-                            cillum dolore eu fugiat nulla pariatur.</p>
+        <div class="row" id="week_chef">
+            <h2>CHEF OF THE WEEK</h2>
+            <div class="card col-md-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="../assets/placeholder.jpeg" alt="Chef profile photo"
+                            style="width:350px;height:350px; margin-left:-7px; margin-bottom: 7px;">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Chef Name</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore
+                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris
+                                nisi ut
+                                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                velit
+                                esse
+                                cillum dolore eu fugiat nulla pariatur.</p>
 
-                        <div class="row">
-                            <a class="btn btn-dark" a href="chef_page.html">Visit Chef Page</a>
+                            <div class="row">
+                                <a class="btn btn-dark" a href="chef_page.html">Visit Chef Page</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Signature Dishes</h5>
-                        <div class="row" id="dish1">
-                            <img src="../assets/taco.png" alt="dish#1"
-                                style="width:100px;height:100px; border-radius:50%;">
-                            <div class="col" style="margin-top:30px;">
-                                <button type="button" class="btn" data-toggle="modal"
-                                    data-target=".bd-example-modal-lg">Dish #1</button>
+                    <div class="col-md-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Signature Dishes</h5>
 
-                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
-                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg dishmModal-1">
-                                        <div class="modal-content">
-                                            <div class="col-md-8">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Dish #1</h4>
-                                                    <div class="row" id="dish1">
-                                                        <img src="../assets/taco.png" alt="dish#1"
-                                                            style="width:300px;height:300px; border-radius:50%;">
-                                                        <div class="col" style="margin-top:20px; margin-left:10px">
-                                                            <h3>Dish #1</h3>
-                                                            <p>Dish description</p>
-                                                            <class="form-check-input">
-                                                                <h5>Contains: </h5>
-                                                                </class>
-                                                                <div class="row toCart">
-                                                                    <button type="button" class="btn btn-dark">Add to
-                                                                        Cart</button>
-                                                                </div>
+                            <div class="row" id="dish1">
+                                <img src="../assets/taco.png" alt="dish#1"
+                                    style="width:100px;height:100px; border-radius:50%;">
+                                <div class="col" style="margin-top:30px;">
+                                    <button type="button" class="btn" data-toggle="modal"
+                                        data-target=".bd-example-modal-lg">Dish #1</button>
+
+                                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                                        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg dishmModal-1">
+                                            <div class="modal-content">
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Dish #1</h4>
+                                                        <div class="row" id="dish1">
+                                                            <img src="../assets/taco.png" alt="dish#1"
+                                                                style="width:300px;height:300px; border-radius:50%;">
+                                                            <div class="col" style="margin-top:20px; margin-left:10px">
+                                                                <h3>Dish #1</h3>
+                                                                <p>Dish description</p>
+                                                                <class="form-check-input">
+                                                                    <h5>Contains: </h5>
+                                                                    </class>
+                                                                    <div class="row toCart">
+                                                                        <button type="button" class="btn btn-dark">Add
+                                                                            to
+                                                                            Cart</button>
+                                                                    </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -132,35 +119,37 @@
                                 </div>
 
                             </div>
-                        </div>
 
-                        <div class="row" id="dish2">
-                            <img src="../assets/taco.png" alt="dish#2"
-                                style="width:100px;height:100px; border-radius:50%;">
-                            <div class="col" style="margin-top:30px;">
-                                <button type="button" class="btn" data-toggle="modal"
-                                    data-target=".bd-example-modal-lg">Dish #2</button>
 
-                                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
-                                    aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg dishModal-2">
-                                        <div class="modal-content">
-                                            <div class="col-md-8">
-                                                <div class="card-body">
-                                                    <h4 class="card-title">Dish #2</h4>
-                                                    <div class="row" id="dish2">
-                                                        <img src="../assets/taco.png" alt="dish#2"
-                                                            style="width:300px;height:300px; border-radius:50%;">
-                                                        <div class="col" style="margin-top:20px; margin-left:10px">
-                                                            <h3>Dish #2</h3>
-                                                            <p>Dish description</p>
-                                                            <class="form-check-input">
-                                                                <h5>Contains: </h5>
-                                                                </class>
-                                                                <div class="row toCart">
-                                                                    <button type="button" class="btn btn-dark">Add to
-                                                                        Cart</button>
-                                                                </div>
+                            <div class="row" id="dish2">
+                                <img src="../assets/taco.png" alt="dish#2"
+                                    style="width:100px;height:100px; border-radius:50%;">
+                                <div class="col" style="margin-top:30px;">
+                                    <button type="button" class="btn" data-toggle="modal"
+                                        data-target=".bd-example-modal-lg">Dish #2</button>
+
+                                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+                                        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg dishmModal-1">
+                                            <div class="modal-content">
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        <h4 class="card-title">Dish #2</h4>
+                                                        <div class="row" id="dish1">
+                                                            <img src="../assets/taco.png" alt="dish#1"
+                                                                style="width:300px;height:300px; border-radius:50%;">
+                                                            <div class="col" style="margin-top:20px; margin-left:10px">
+                                                                <h3>Dish #2</h3>
+                                                                <p>Dish description</p>
+                                                                <class="form-check-input">
+                                                                    <h5>Contains: </h5>
+                                                                    </class>
+                                                                    <div class="row toCart">
+                                                                        <button type="button" class="btn btn-dark">Add
+                                                                            to
+                                                                            Cart</button>
+                                                                    </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -168,28 +157,28 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-
 
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row" id="chefs"></div>
         <h2>AVAILABLE CHEFS IN YOUR NEIGHBORHOOD</h2>
+        <div class="row" id="chefs">
+        </div>
+
+        <h2>DISHES OF THE WEEK</h2>
+        <div class="row" id="week_dishes">
+        </div>
+
     </div>
 
-    <div class="container">
-        <div class="row" id="week_dishes"></div>
-        <h2>DISHES OF THE WEEK</h2>
-    </div>
 
     <footer>
         <div class="copyright">
-            © 2021 Your Neighbor Chef. All rights reserved.
+            © 2021 Your Neighbor Chefs. All rights reserved.
         </div>
     </footer>
 
