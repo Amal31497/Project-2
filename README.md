@@ -1,28 +1,98 @@
-# Project-2
-A meal sharing application that allows users to sign up either as a chef or as a foodie. Meals are posted by chefs only and orders are posted by customers based on existing meals.
+# Your Neighbor Chef
 
-# Objective
-* Users can sign up as chefs and post their menus of specific cusines (American, Thai, Indian, etc.), each menu may include special items that would accommodate dietary needs (vegan, gluten-free, dairy free, etc.)
-* Other users can sign up as foodies and set up their profiles with dietary preferences
+### Table of Contents 
 
-# User Story:
-```md
-AS A Stay at Home Chef
-I WANT to create meals and post them on the website and store it in a Database
-SO THAT Customers(Users) can look up all meal options based on certain specifications(Cuisine, Restrictions, Proximity/Time takes to deliver a meal)
-```
+* [Repository](#Repository) 
+* [Technology Used](#Technology-Used) 
+* [User Story](#User-Story)
+* [Main Application](#Main-Application)
+* [Contributors](#Contributors)
+* [Contact Info](#Contact-Info)
+* [Conclusion](#Conclusion)
 
-```md
-Its done when the "/" homepage route renders the following(Top Chef of the week, Chefs in the area, Meals)
-Its done when the "/signUp/chef" page route renders a form where a new user can register as a chef
-Its done when the "/signUp/foodie" page route renders a form where a new user can register as a customer(foodie)
-Its done when the "/chef-profile" page route renders a page with a given chef information(Name, Contact Info, Location, Rating, Specialty)
-Its done when the "/meals/:id" page route renders a page with a all meals for a given chef specified in ":id"
-Its done when the "/orders/:customer_id/:meal_id" page route renders a page with all placed orders for a given customer for a given meal
-```
+# Repository
 
-![Homepage](./Assets/Pictures/homepage.jpg)
-![SignUpChef](./Assets/Pictures/signUpChef.jpg)
-![SignUpCustomer](./Assets/Pictures/signUpFoodie.jpg)
-![Screenshot](./Assets/Pictures/screenshot.png)
+- This repository is for a web application that allows users to either sign up as a local 'Neighbor Chef' or a 'Foodie.' The goal of this project is to provide a platform to find local chefs, be able to purchase homemade dishes, which are then paid for and delivered to you home. This will allow people to empower each other and bring together their communities by allowing those at home to make some extra money by cooking meals for those around them. 
 
+*LINK TO HEROKU DEPLOYMENT*
+
+<!-- Insert Link to Heroku -->
+
+# Technology-Used
+
+- To build this project we made sure to follow the MVC paradigm (Model View Controller) to create web application.
+
+- To make our server we used express, alongside other dependencies like nodemon, to make our webpage functional with basic paths and routes.
+
+- For the front-end we utilized express- handlebars to make sure that our html pages were dynamic for the user. 
+
+- Then using express-session with bcrypt we ensure that the user can login to our website, be authenticated, and safely save their information. 
+
+- To make our database we use mysql2 and connected to it using Sequelize. This is also how we ensure to save our user's session and safely store it in the database. 
+
+- To access our database correctly we used the dotenv file and created a 'gitignore' to make sure that the database and the user's information is secure.
+
+<!-- Jenni/Jasur finish explaining these technologies -->
+
+- multer/multer-s3...
+
+- uuid...
+
+- aws-sdk...
+
+- We finally used heroku deploy the application to a public hosting service so that anyone can navigate and then use it.
+
+# User-Story
+
+- When the application is loaded the user will find a homepage where they can search for local chefs, by using their zip code and selecting a cuisine then be presented with a results page.
+
+- They can also choose to sign up as a "Neighbor Chef' or 'Foodie.' Which allows them to then login and access other features of the website and begin making or ordering dishes.
+
+- Below the main navigation bar we present the user with some information they night be interested in by showing chefs profiles and dishes that they can navigate through, browse, and shop.
+
+- After signing up as a Chef the user creates a profile, can build a menu by adding dishes, and soon connect with Foodies to begin selling their products.
+
+- After signing up as a Foodie the user can search for Chefs nearby them based on their zip code and look through the provided menus to place some orders.
+
+- When after the purchases are made the local Chef will prepare the given dishes and then deliver them to the user at their home (following all safety procedures and precautions).
+
+### Main-Application
+
+*IMAGES BELOW*
+
+*Main-Page*
+
+ <!-- Insert screenshots -->
+
+*END OF APPLICATION*
+
+# Contributors:
+
+- Amal Janabayev
+- Jasur Amirov
+- Jenni Detmering
+- Hanh Le
+- Greg Harris
+
+# Contact-Info:
+
+<!-- Finish Contact Info -->
+
+- Name: Amal Janabayev
+- Email: ...
+
+- Name: Jasur Amirov
+- Email: ...
+
+- Name: Jenni Detmering
+- Email: ...
+
+- Name: Hanh Le
+- Email: ...
+
+- Name: Greg Harris
+- Email: ghart.productions@gmail.com
+
+# Conclusion
+
+- Overall this project was very challenging, required many hours of collaboration, and lots teamwork. But we were able to finally build a minimal viable product with the hopes to work on some other features and make our website complete. We hope to go through our list of future developments to add more functionality and usability for this application in a real world scenario. But we learned how to better work together to build out this project, apply the methods we've been taught in class, and use the technologies we've been learning about to create a fully developed webpage application.
