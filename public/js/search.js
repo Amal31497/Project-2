@@ -3,16 +3,23 @@ const search = async (event) => {
     const zipCode = document.querySelector("#zipcode").value.trim();
     const cuisine = document.querySelector("#cuisine").value.trim();
 
-    if(zipCode && cuisine){
-        const response = await fetch(`api/search/${cuisine}/${zipCode}`);
+    console.log(zipCode);
+    console.log(cuisine);
 
-        if(response.ok){
-            document.location.replace('/search')
+    if (zipCode && cuisine) {
+        const response = await fetch(`api/search/${cuisine}/${zipCode}`, {
+            method: 'GET',
+            body: JSON.stringify({ cuisine, zipcode }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (response.ok) {
+            document.location.replace('/results')
         } else {
-            alert( await response.statusText);
+            alert( await response.statusText );
         }
-    }
+    };
 }
 
-const searchtButton = document.querySelector("#searchBtn");
-searchButton.addEventListener("click", search);
+    const searchButton = document.querySelector("#searchBtn");
+    searchButton.addEventListener("click", search);
