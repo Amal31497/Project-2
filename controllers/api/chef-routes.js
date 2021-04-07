@@ -1,27 +1,61 @@
+const express = require('express');
 const router = require('express').Router();
-const { Chef,Cuisine,Dish } = require('../../models');
+const { Chef,Cuisine,Dish,Image } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-const multer = require ('multer');
-const uuid = require ('uuid').v4;
+const aws = require('aws-sdk');
 
-const express = require('express');
+const multer = require('multer');
+const multerS3 = require('multer-s3');
+const uuid = require('uuid').v4;
 const path = require('path');
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) =>{
-    cb(null, 'uploads');
-  },
-  filename: (req, file, cb) => {
-    const { originalname} = file;
-    cb(null, `${uuid()}-${originalname}`);
-  }
-});
-const upload = multer({storage});
+const app = express();
 
-router.post('/upload', upload.array('avatar'), (req, res) => {
-  return res.json({ status: 'OK', uploaded: req.files.length});
+const s3 = new aws.S3({ apiVersion: '2006-03-01'});
+
+const upload = multer({
+    storage: multerS3({
+        s3: s3,
+        bucket: 'chefimages',
+        metadata: (req,file,cb) =>{
+            cb(null, {fieldName: file.fieldname });
+        },
+        key: (req,file,cb) =>{
+            const ext = path.extname(file.originalname);
+            
+            const fileUname = uuid();
+
+            cb(null, `${fileUname}${ext}`);
+
+            console.log(fileUname + ext);
+
+        }
+
+    })
+})
+
+router.post('/upload', upload.array('avatar'), (req,res) =>{
+  return res.json({status: "OK", uploaded: req.files.length});
 });
+
+
+
+
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) =>{
+//     cb(null, 'uploads');
+//   },
+//   filename: (req, file, cb) => {
+//     const { originalname} = file;
+//     cb(null, `${uuid()}-${originalname}`);
+//   }
+// });
+// const upload = multer({storage});
+
+// router.post('/upload', upload.array('avatar'), (req, res) => {
+//   return res.json({ status: 'OK', uploaded: req.files.length});
+// });
 
 
 // GET all Chefs
