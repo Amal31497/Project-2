@@ -27,7 +27,7 @@
     </div>
 
 
-    <div class="container-xl">
+    <div class="container">
         <div class="row" id="chefs"></div>
         <h2>WELCOME CHEF!</h2>
         <h4>Let's get you started</h4>
@@ -36,39 +36,60 @@
 
     <div class="container">
         <form>
-            <div class="form-group">
-                <label>Tell us a bit about yourself</label>
-                <textarea class="form-control" id="chefBio" rows="7"
-                    placeholder="Where are you from? What inspires you to cook?"></textarea>
+            <div class="row">
+                <div class="col-9 form-group" style="margin-left:-15px">
+                    <label>Tell Us A Bit About Yourself</label>
+                    <textarea class="form-control" id="chefBio" rows="10"
+                        placeholder="Where are you from? What inspires you to cook?"></textarea>
+                </div>
+
+                <div class="col-3 uploadPhoto">
+                    <p>Upload Your Profile Photo</p>
+                    <div class="form-group">
+                        <form action="/api/chefs/upload" method="POST" enctype="multipart/form-data">
+                            <div class="input-group btn btn-default btn-file">
+                                <input id="upload" type="file" name="avatar" class="form-control border-0"
+                                    style="margin-left:-25px; margin-top:-20px" multiple>
+                            </div>
+                            <img id='chefPhoto' />
+                            <div class="row">
+                                <button>Submit</button>
+                            </div>
+                    </div>
+                </div>
             </div>
 
-            <label class="uploadPhoto">Upload your profile photo</label>
-            <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
 
             <br></br>
 
-            <h4>What's on your menu?</h4>
-            <div class="form-row dish">
-                <div class="form-group col-md-6">
+            <h4>What's On Your Menu?</h4>
+            <div class="row dish">
+                <div class="col-9 form-group" style="margin-left:-15px">
                     <label for="inputFirstName">Dish Name</label>
                     <input type="text" class="form-control" id="dishName">
+
+                    <label>Description</label>
+                    <textarea class="form-control" id="dishDescription" rows="5"></textarea>
+
+                    <label>Which Cuisine Does This Dish Belong To?</label>
+                    <input type="text" class="form-control" id="inputCuisine" placeholder="Cuisine">
                 </div>
 
-                <div class="col-md-6 mb-3">
-                    <label id="upload-label" for="upload" class="uploadPhoto">Upload your dish photo</label>
-                    <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
+                <div class="col-3 uploadPhoto">
+                    <p>Upload Dish Photo</p>
+                    <div class="form-group">
+                        <form action="/api/dishes/upload" method="POST" enctype="multipart/form-data">
+                            <div class="input-group btn btn-default btn-file">
+                                <input id="upload" type="file" name="dishPhoto" class="form-control border-0"
+                                    style="margin-left:-25px; margin-top:-20px" multiple>
+                            </div>
+                            <img id='dishPhoto' />
+                            <div class="row">
+                                <button>Submit</button>
+                            </div>
+                    </div>
                 </div>
 
-            </div>
-
-            <div class="form-group">
-                <label>Description</label>
-                <textarea class="form-control" id="dishDescription" rows="5"></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>Which Cuisine Does This Dish Belong To?</label>
-                <input type="text" class="form-control" id="inputCuisine" placeholder="Cuisine">
             </div>
 
             <div class="form-check form-check-inline">
@@ -103,13 +124,8 @@
             <div class="row">
                 <button type="submit" class="btn btn-dark">Submit</button>
             </div>
+        </form>
     </div>
-
-
-
-    </form>
-
-</div>
 </div>
 
 <footer>
