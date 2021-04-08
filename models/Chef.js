@@ -52,6 +52,9 @@ Chef.init(
         description: {
             type: DataTypes.STRING,
         },
+        image_name: {
+            type: DataTypes.STRING,
+        },
     },
     {
         hooks: {

@@ -8,7 +8,8 @@
         "city" : "Spanaway",
         "state" : "Wa",
         "zipcode" : 98387,
-        "cuisine_id" : 1
+        "cuisine_id" : 1,
+        "image_name":"1"
     },
     {
         "email" : "wildbirdiedog@gmail.com",
@@ -19,7 +20,8 @@
         "city" : "Tacoma",
         "state" : "Wa",
         "zipcode" : 98387,
-        "cuisine_id" : 2
+        "cuisine_id" : 2,
+        "image_name":"1"
     },
     {
         "email" : "amalj2426@gmail.com",
@@ -30,7 +32,8 @@
         "city" : "Spokane",
         "state" : "Wa",
         "zipcode" : 98387,
-        "cuisine_id" : 4
+        "cuisine_id" : 4,
+        "image_name":"1"
     },
     {
         "email" : "hellokitty@gmail.com",

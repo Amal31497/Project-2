@@ -27,8 +27,34 @@ const upload = multer({
             const fileUname = uuid();
 
             cb(null, `${fileUname}${ext}`);
+            const chefID = req.session.user_id;
+            
+            console.log(chefID);
+            console.log(fileUname);
 
-            console.log(fileUname + ext);
+            Chef.update(
+              {
+                image_name:fileUname,
+            },
+            {
+              where:{
+                id: chefID,
+              }
+            })
+            .then(
+              (updated) =>{
+                res.json(updated)
+              }
+            ).catch((err) =>{
+              res.json(err)
+            });
+           
+            // const currentChef = Chef.findOneByPk(chefID);
+            // const imageName = 
+
+            // Chef.create({image_name:fileUname});
+
+            
 
         }
 
