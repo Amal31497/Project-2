@@ -90,3 +90,10 @@
     justify-content: center;
 }
 
+#dishName,#dishDescription{
+    width:50rem;
+}
+
+.uploadDishPhoto{
+    margin-top:3rem;
+}
