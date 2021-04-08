@@ -1,32 +1,42 @@
 const router = require('express').Router();
 const { Chef, Cuisine, Dish } = require('../../models');
 
-// GET all 
-router.get('/:id/:zipcode',async (req, res) => {
-    try {
-        const searchCuisine = await Cuisine.findOne({
-            where: { 
-                id: req.params.id
-            },
-            include: [
-                {
-                    model: Chef,
-                    where: { zipcode: req.params.zipcode },
-                },
-                {
-                    model: Dish,
-                },
-            ]
-        });
+// GET Search (with res.status)
+// router.get('/:zipcode', async (req, res) => {
+//     try {
+//         const result = await Chef.findAll({
+//             where: {
+//                 zipcode: req.params.zipcode
+//             },
+//         });
 
-        if(!searchCuisine) {
-            res.status(404).json({ message: 'No Chef found with that zipcode!' });
-        }
+//         console.log(result);
+//         const resultData = await result.get({ plain: true });
+//         console.log(resultData);
 
-        res.status(200).json(searchCuisine);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+//         res.status(200).json(resultData);
+//     } catch (err) {
+//         res.status(500).json(err)
+//     }
+// });
+
+// GET Search (with res.render)
+// router.get('/:zipcode', async (req, res) => {
+//     try {
+//         const searchChef = await Chef.findAll({
+//             where: { zipcode: req.params.zipcode }
+//         });
+
+//         console.log(searchChef);
+//         const chefs = searchChef.map((chef) => chef.get({ plain: true }));
+//         res.render('/results', {
+//             ...chefs
+//         });
+//         console.log(chefs);
+//     } catch (err) {
+//         res.status(404).json(err)
+//     }
+// });
+
 
 module.exports = router;

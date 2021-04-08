@@ -48,24 +48,41 @@ router.get('/chef-page', withAuth, async(req,res)=>{
 })
 
 // GET Search
-router.get('/search', async (req, res) => {
+router.get('/results/:zipcode', async (req, res) => {
     try {
-        const searchChef = await Cuisine.findByPk(req.session.id, {
-            include: [{
-                Chef,
-                attributes: ['first_name', 'description', 'zipcode'],
-                include: [Dish]
-            }]
-        })
-        const chefs = chefData.map((chef) => chef.get({ plain: true }));
+        const result = await Chef.findAll({
+            where: { zipcode: req.params.zipcode}
+        });
+
+        const chefs = result.map((chef) => chef.get({ plain: true }));
+
+        console.log(chefs);
+
         res.render('results', {
-            ...chefs
-        },
-        )
+            chefs: chefs
+        });
     } catch (err) {
-        res.status(404).json(err)
+        res.status(500).json(err)
     }
-})
+});
+
+// GET Search
+// router.get('/search/:zipcode', async (req, res) => {
+//     try {
+//         const searchChef = await Chef.findAll({
+//             where: { zipcode: req.params.zipcode }
+//         });
+
+//         console.log(searchChef);
+//         const chefs = searchChef.map((chef) => chef.get({ plain: true }));
+//         res.redirect('results', {
+//             ...chefs
+//         });
+//         console.log(chefs);
+//     } catch (err) {
+//         res.status(404).json(err)
+//     }
+// })
 
 // GET Chef profile and pass data
 router.get('/chef-profile', async (req, res) => {
