@@ -23,7 +23,36 @@ router.post('/upload', upload.array('avatar'), (req, res) => {
   return res.json({ status: 'OK', uploaded: req.files.length});
 });
 
-
+router.post('/api/upload',upload.single('avatar'), function (req, res) {
+  message : "Error! in image upload."
+    if (!req.file) {
+        console.log("No file received");
+          message = "Error! in image upload."
+        res.render('index',{message: message, status:'danger'});
+    
+      } else {
+        console.log('file received');
+        console.log(req);
+        var sql = "INSERT INTO `image`(`name`, `type`, `data`) VALUES ('" + req.file.filename + "', '"+req.file.mimetype+"', '"+req.file.size+"')";
+ 
+                var query = db.query(sql, function(err, result) {
+                   console.log(db);
+                });
+        message = "Successfully! uploaded";
+        res.render('index',{message: message, status:'success'});
+ 
+      }
+});
+// router.get('/upload), (req, res) => {
+//   displayImage:function(callback){
+//    // check unique email address
+//    var sql='SELECT image_name FROM images';
+//    db.query(sql,function (err, data, BLOB('long')) {
+//    if(err) throw err
+//    return callback(data);
+//   })
+//   }
+// }
 // GET all Chefs
 router.get('/', async (req,res)=>{
   try {
