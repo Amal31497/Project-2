@@ -70,7 +70,7 @@ router.get('/search', async (req, res) => {
 })
 
 // GET Chef profile and pass data
-router.get('/chef-profile', async (req, res) => {
+router.get('/chef-form', async (req, res) => {
     try {
         // Find the logged in user based on the session ID
         const chefData = await Chef.findByPk(req.session.user_id, {
@@ -83,7 +83,7 @@ router.get('/chef-profile', async (req, res) => {
 
         const chef = chefData.get({ plain: true });
 
-        res.render('chef-profile', {
+        res.render('chef-form', {
             ...chef,
             logged_in: true
         });
@@ -97,7 +97,7 @@ router.get('/chef-profile', async (req, res) => {
 // GET Chef Login
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/chef-profile');
+        res.redirect('/chef-form');
         return;
     }
 
