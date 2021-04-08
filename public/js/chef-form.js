@@ -19,5 +19,5 @@ const chefForm = async(event)=>{
     }
 }
 
-document.querySelector(".chef-form").addEventListener("submit", chefForm)
+document.querySelector("#chefFormSubmit").addEventListener("click", chefForm)
 
