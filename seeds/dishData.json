@@ -2,7 +2,8 @@
 [
     {   
         "dish_name" : "Fried Chicken",
-        "dish_description" : "American",
+        "description" : "American",
+        "image_name":"1",
         "cuisine_id": 1,
         "has_nuts" : false,
         "has_dairy" : false,
@@ -12,7 +13,8 @@
     },
     {
         "dish_name": "Chicken Pad Thai",
-        "dish_description": "Asian",
+        "description": "Asian",
+        "image_name":"1",
         "cuisine_id": 2,
         "has_nuts": true,
         "has_dairy": false,
@@ -22,7 +24,8 @@
     },
     {
         "dish_name": "Beef Teryaki Bowl",
-        "dish_description": "Asian",
+        "description": "Asian",
+        "image_name":"1",
         "cuisine_id": 4,
         "has_nuts": true,
         "has_dairy": false,
@@ -32,7 +35,8 @@
     },
     {
         "dish_name": "Alfredo Pasta",
-        "dish_description": "Italian",
+        "description": "Italian",
+        "image_name":"1",
         "cuisine_id": 4,
         "has_nuts": true,
         "has_dairy": true,
@@ -42,7 +46,9 @@
     },
     {
         "dish_name": "Shrimp tempura",
-        "dish_description": "Asian",
+
+        "description": "Asian",
+        "image_name":"1",
         "cuisine_id": 5,
         "has_nuts": true,
         "has_dairy": false,
@@ -52,7 +58,8 @@
     },
     {
         "dish_name": "Vegan Loaf",
-        "dish_description": "Asian",
+        "description": "Asian",
+        "image_name":"1",
         "cuisine_id": 1,
         "has_nuts": false,
         "has_dairy": false,
@@ -62,7 +69,8 @@
     },
     {
         "dish_name": "Grilled Veggies with mediterranian spices",
-        "dish_description": "Asian",
+        "description": "Asian",
+        "image_name":"1",
         "cuisine_id": 3,
         "has_nuts": true,
         "has_dairy":false,
@@ -72,7 +80,8 @@
     },
     {
         "dish_name": "Surf n' Turf",
-        "dish_description": "Asian",
+        "description": "Asian",
+        "image_name":"1",
         "cuisine_id": 1,
         "has_nuts": true,
         "has_dairy": true,

@@ -19,6 +19,9 @@ Dishes.init(
       type: DataTypes.STRING,
       allowNull:true
     },
+    image_name: {
+      type: DataTypes.STRING,
+  },
     cuisine_id: {
       type: DataTypes.INTEGER,
       references: {
