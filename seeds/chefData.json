@@ -48,7 +48,8 @@
         "state" : "Wa",
         "zipcode" : 98398,
         "chef_description":"placeholder",
-        "cuisine_id" : 2
+        "cuisine_id" : 2,
+        "image_name":"1"
     },
     {
         "email" : "mikeymouse@gmail.com",
@@ -60,7 +61,8 @@
         "state" : "Wa",
         "zipcode" : 98223,
         "chef_description":"placeholder",
-        "cuisine_id" : 5
+        "cuisine_id" : 5,
+        "image_name":"1"
     }
 ]
 

@@ -81,7 +81,7 @@
     cursor: pointer;
 }
 
-#chefName,#dishName{
+#chefName,#dish-name{
     text-align: center;
 }
 
@@ -97,3 +97,4 @@
 .uploadDishPhoto{
     margin-top:3rem;
 }
+
