@@ -31,8 +31,11 @@ const upload = multer({
             
             const chefID = req.session.user_id;
 
-            const cuisineID = 1
-            // Cuisine.findOne({where: {cuisine_id: chefID}}) ;
+            const cuisineID = Cuisine.findOne({where: {cuisine_id: chefID}}) ;
+
+            // const dish = Dish.findOne({})
+
+            console.log(dish);
 
             
             console.log(cuisineID);
@@ -45,7 +48,7 @@ const upload = multer({
             },
             {
               where:{
-                cuisine_id: 1,
+                cuisine_id: cuisineID,
               }
             })
             .then(
