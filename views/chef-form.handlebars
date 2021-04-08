@@ -9,7 +9,7 @@
             {{!-- Form for chef description --}}
             <div class="col-9 chef-form">
                 <div class=" form-group" style="margin-left:-15px">
-                    <textarea class="form-control" id="chefBio" rows="10"
+                    <textarea class="form-control" id="chefBio" rows="11"
                         placeholder="Where are you from? What inspires you to cook?"></textarea>
                 </div>
                 <button class="btn btn-primary" id="chefFormSubmit">Submit Chef Info</button>
@@ -44,7 +44,7 @@
                         <input type="text" class="form-control" id="dishName">
 
                         <label>Description</label>
-                        <textarea class="form-control" id="dishDescription" rows="5"></textarea>
+                        <textarea class="form-control" id="dishDescription" rows="7"></textarea>
 
                         <label>Which Cuisine Does This Dish Belong To?</label>
                         <div class="btn-group">
@@ -89,18 +89,18 @@
             </form>
             {{!-- ----------------------------- --}}
             {{!-- Form fro uploading dish photos --}}
-            <div class="col-3 uploadPhoto">
-                <p>Upload Dish Photo</p>
+            <div class="col-3 uploadDishPhoto">
                 <div class="form-group">
+                    <p>Upload Dish Photo</p>
                     <form action="/api/dishes/uploadDish" method="POST" enctype="multipart/form-data">
-                    <div class="input-group btn btn-default btn-file">
-                        <input id="upload" type="file" name="avatar" class="form-control border-0"
-                            style="margin-left:-25px; margin-top:-20px" multiple>
-                    </div>
-                    <img id='dishPhoto'/>
-                    <div class="row">
-                        <button>Submit</button>
-                    </div>
+                        <div class="input-group btn btn-default btn-file">
+                            <input id="upload" type="file" name="avatar" class="form-control border-0"
+                                style="margin-left:-25px;" multiple>
+                        </div>
+                        <img id='dishPhoto'/>
+                        <div class="row">
+                            <button>Submit</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -109,7 +109,9 @@
             
     </div>
     <br><br>
-    <button class="btn btn-outline-success btn-lg" id="profile"><a href="/chef-page">Visit Your Profile Page</a></button>
+    <div class="row">
+        <a class="btn btn-dark" href="/chef-page">Visit Chef Page</a>
+    </div>
 </div>
 
 <script src="/js/chef-form.js"></script>
