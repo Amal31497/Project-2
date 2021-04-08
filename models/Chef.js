@@ -49,8 +49,9 @@ Chef.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        description: {
+        chef_description: {
             type: DataTypes.STRING,
+            allowNull:true
         },
         image_name: {
             type: DataTypes.STRING,

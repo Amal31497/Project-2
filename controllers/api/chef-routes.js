@@ -1,6 +1,6 @@
 const express = require('express');
 const router = require('express').Router();
-const { Chef,Cuisine,Dish,Image } = require('../../models');
+const { Chef, Cuisine, Dish, Image, DishImage } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 const aws = require('aws-sdk');
@@ -138,23 +138,24 @@ router.post('/', async (req, res) => {
 });
 
 // UPDATE(PUT) Chef profile info
-// router.put('/:id', async(req,res)=>{
-//   try {
-//     const chefData = await Chef.update(req.body, {
-//       where:{
-//         id:req.params.id
-//       }
-//     });
+router.put('/:id', withAuth, async(req,res)=>{
+  try {
+    const chefData = await Chef.update({chef_description:req.body.chef_description}, 
+      {
+      where:{
+        id:req.params.id
+      }
+    });
 
-//     if (!chefData[0]) {
-//       res.status(404).json({ message: 'No chef found with this id!' });
-//     }
+    if (!chefData[0]) {
+      res.status(404).json({ message: 'No chef found with this id!' });
+    }
 
-//     res.status(200).json(chefData)
-//   } catch (err) {
-//     res.status(500).json(err)
-//   }
-// })
+    res.status(200).json(chefData)
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
 
 
 // POST Chef Login

@@ -7,10 +7,9 @@
 }
 
 .logo {
-    margin-top: 100px;
-    margin-bottom: 30px;
+    margin-top: 75px;
     overflow: hidden;
-    color:white;
+    color:white !important
 }
 
 .row {
@@ -36,7 +35,6 @@
 }
 
 .search-box {
-    display: flex; 
     margin-right: 5px;
     border-width: thin;
     border-radius: 5px;;
@@ -50,6 +48,11 @@
     color: white;
     border-color: black;
     margin-left: 5px;
+}
+
+.title {
+    text-align: left !important
+
 }
 
 .copyright{

@@ -17,8 +17,7 @@ const signupFormHandler = async (event) => {
         body: JSON.stringify({ email, password, first_name, phone_number, address, city, state, zipcode }),
         headers: { 'Content-Type': 'application/json' },
       });
-     
-  
+      
       if (response.ok) {
         document.location.replace('/');
       } else {
