@@ -68,17 +68,6 @@
         "has_shellfish": false
     },
     {
-        "dish_name": "Grilled Veggies with mediterranian spices",
-        "description": "Asian",
-        "image_name":"1",
-        "cuisine_id": 3,
-        "has_nuts": true,
-        "has_dairy":false,
-        "vegan": true,
-        "has_gluten":false,
-        "has_shellfish": false
-    },
-    {
         "dish_name": "Surf n' Turf",
         "description": "Asian",
         "image_name":"1",
