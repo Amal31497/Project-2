@@ -1,20 +1,20 @@
 # Your Neighbor Chef
 
-### Table of Contents 
+### Table of Contents
 
-* [Repository](#Repository) 
-* [Technology Used](#Technology-Used) 
-* [User Story](#User-Story)
-* [Main Application](#Main-Application)
-* [Contributors](#Contributors)
-* [Contact Info](#Contact-Info)
-* [Conclusion](#Conclusion)
+- [Repository](#Repository)
+- [Technology Used](#Technology-Used)
+- [User Story](#User-Story)
+- [Main Application](#Main-Application)
+- [Contributors](#Contributors)
+- [Contact Info](#Contact-Info)
+- [Conclusion](#Conclusion)
 
 # Repository
 
-- This repository is for a web application that allows users to either sign up as a local 'Neighbor Chef' or a 'Foodie.' The goal of this project is to provide a platform to find local chefs, be able to purchase homemade dishes, which are then paid for and delivered to you home. This will allow people to empower each other and bring together their communities by allowing those at home to make some extra money by cooking meals for those around them. 
+- This repository is for a web application that allows users to either sign up as a local 'Neighbor Chef' or a 'Foodie.' The goal of this project is to provide a platform to find local chefs, be able to purchase homemade dishes, which are then paid for and delivered to you home. This will allow people to empower each other and bring together their communities by allowing those at home to make some extra money by cooking meals for those around them.
 
-*LINK TO HEROKU DEPLOYMENT*
+_LINK TO HEROKU DEPLOYMENT_
 
 <!-- Insert Link to Heroku -->
 
@@ -24,21 +24,21 @@
 
 - To make our server we used express, alongside other dependencies like nodemon, to make our webpage functional with basic paths and routes.
 
-- For the front-end we utilized express- handlebars to make sure that our html pages were dynamic for the user. 
+- For the front-end we utilized express- handlebars to make sure that our html pages were dynamic for the user.
 
-- Then using express-session with bcrypt we ensure that the user can login to our website, be authenticated, and safely save their information. 
+- Then using express-session with bcrypt we ensure that the user can login to our website, be authenticated, and safely save their information.
 
-- To make our database we use mysql2 and connected to it using Sequelize. This is also how we ensure to save our user's session and safely store it in the database. 
+- To make our database we use mysql2 and connected to it using Sequelize. This is also how we ensure to save our user's session and safely store it in the database.
 
 - To access our database correctly we used the dotenv file and created a 'gitignore' to make sure that the database and the user's information is secure.
 
 <!-- Jenni/Jasur finish explaining these technologies -->
 
-- multer/multer-s3...
+- Multer/multer-s3 is a node.js middleware for handling multipart/form-data, which we used for uploading our photos.
 
-- uuid...
+- We used uuid to give uploaded images a unique ID.
 
-- aws-sdk...
+- Amazon Web Services-sdk a cloud based service was used to host our images.
 
 - We finally used heroku deploy the application to a public hosting service so that anyone can navigate and then use it.
 
@@ -58,13 +58,13 @@
 
 ### Main-Application
 
-*IMAGES BELOW*
+_IMAGES BELOW_
 
-*Main-Page*
+_Main-Page_
 
  <!-- Insert screenshots -->
 
-*END OF APPLICATION*
+_END OF APPLICATION_
 
 # Contributors:
 
