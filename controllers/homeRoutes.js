@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Chef, Cuisine, Dish, Image} = require('../models')
+const { Chef, Cuisine, Dish, Image } = require('../models')
 const withAuth = require('../utils/auth');
 
 // GET ALL Chefs
@@ -14,6 +15,7 @@ router.get('/', async (req, res) => {
                 {
                 model: Image,
                 }
+                {model:Image}
             ]
         })
         const chefs = chefData.map((chef) => chef.get({ plain: true }));

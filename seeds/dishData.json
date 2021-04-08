@@ -21,16 +21,6 @@
         "has_shellfish": false
     },
     {
-        "dish_name": "Beef Teryaki Bowl",
-        "dish_description": "Asian",
-        "cuisine_id": 4,
-        "has_nuts": true,
-        "has_dairy": false,
-        "vegan": false,
-        "has_gluten": true,
-        "has_shellfish": false
-    },
-    {
         "dish_name": "Alfredo Pasta",
         "dish_description": "Italian",
         "cuisine_id": 4,
@@ -57,26 +47,6 @@
         "has_nuts": false,
         "has_dairy": false,
         "vegan": true,
-        "has_gluten": true,
-        "has_shellfish": false
-    },
-    {
-        "dish_name": "Grilled Veggies with mediterranian spices",
-        "dish_description": "Asian",
-        "cuisine_id": 3,
-        "has_nuts": true,
-        "has_dairy":false,
-        "vegan": true,
-        "has_gluten":false,
-        "has_shellfish": false
-    },
-    {
-        "dish_name": "Surf n' Turf",
-        "dish_description": "Asian",
-        "cuisine_id": 1,
-        "has_nuts": true,
-        "has_dairy": true,
-        "vegan": false,
         "has_gluten": true,
         "has_shellfish": false
     }

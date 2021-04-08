@@ -53,6 +53,10 @@ Chef.init(
             type: DataTypes.STRING,
             allowNull:true
         },
+        image_name: {
+            type: DataTypes.STRING,
+            allowNull:true
+        }
     },
     {
         hooks: {
