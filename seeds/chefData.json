@@ -2,7 +2,7 @@
     {
         "email" : "kodiakshuksan@yahoo.com",
         "password" : "password",
-        "first_name" : "Penny",
+        "first_name" : "Jeff",
         "phone_number" : "3603251819",
         "address" : "17-166th St. Ct. East",
         "city" : "Spanaway",
@@ -41,7 +41,7 @@
     {
         "email" : "hellokitty@gmail.com",
         "password" : "password",
-        "first_name" : "Kitty",
+        "first_name" : "Pam",
         "phone_number" : "4358837262",
         "address" : "1830 56th St SE",
         "city" : "Olympia",
@@ -53,7 +53,7 @@
     {
         "email" : "mikeymouse@gmail.com",
         "password" : "password",
-        "first_name" : "Mikey",
+        "first_name" : "Mike",
         "phone_number" : "439981087",
         "address" : "45th ST SW",
         "city" : "Seatle",
@@ -61,18 +61,6 @@
         "zipcode" : 98223,
         "chef_description":"placeholder",
         "cuisine_id" : 5
-    },
-    {
-        "email" : "testuserchef@gmail.com",
-        "password" : "password",
-        "first_name" : "Best Chef",
-        "phone_number" : "9981022033",
-        "address" : "4430 N East Way",
-        "city" : "Bothell",
-        "state" : "Wa",
-        "zipcode" : 98023,
-        "chef_description":"placeholder",
-        "cuisine_id" : 4
     }
 ]
 
