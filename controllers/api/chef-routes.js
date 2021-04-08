@@ -1,6 +1,6 @@
 const express = require('express');
 const router = require('express').Router();
-const { Chef, Cuisine, Dish, Image, DishImage } = require('../../models');
+const { Chef, Cuisine, Dish,} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 const aws = require('aws-sdk');
@@ -23,18 +23,17 @@ const upload = multer({
         },
         key: (req,file,cb) =>{
             const ext = path.extname(file.originalname);
-            
             const fileUname = uuid();
-
             cb(null, `${fileUname}${ext}`);
             const chefID = req.session.user_id;
             
             console.log(chefID);
-            console.log(fileUname);
+            const fullName = fileUname+ext;
+            console.log(fullName);
 
             Chef.update(
               {
-                image_name:fileUname,
+                image_name:fullName,
             },
             {
               where:{
@@ -48,14 +47,6 @@ const upload = multer({
             ).catch((err) =>{
               res.json(err)
             });
-           
-            // const currentChef = Chef.findOneByPk(chefID);
-            // const imageName = 
-
-            // Chef.create({image_name:fileUname});
-
-            
-
         }
 
     })
@@ -140,7 +131,7 @@ router.post('/', async (req, res) => {
 // UPDATE(PUT) Chef profile info
 router.put('/:id', withAuth, async(req,res)=>{
   try {
-    const chefData = await Chef.update(req.body, 
+    const chefData = await Chef.update({chef_description:req.body.chef_description}, 
       {
       where:{
         id:req.params.id
