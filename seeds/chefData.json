@@ -2,18 +2,18 @@
     {
         "email" : "kodiakshuksan@yahoo.com",
         "password" : "password",
-        "first_name" : "Jenni",
+        "first_name" : "Penny",
         "phone_number" : "3603251819",
-        "address" : "1720-166th St. Ct. East",
+        "address" : "17-166th St. Ct. East",
         "city" : "Spanaway",
         "state" : "Wa",
         "zipcode" : 98387,
         "cuisine_id" : 1
     },
     {
-        "email" : "wildbirdiedog@gmail.com",
+        "email" : "wildbird@gmail.com",
         "password" : "password",
-        "first_name" : "Greg",
+        "first_name" : "Mark",
         "phone_number" : "3605991819",
         "address" : "1897-176th St. Ct. East",
         "city" : "Tacoma",
@@ -22,9 +22,9 @@
         "cuisine_id" : 2
     },
     {
-        "email" : "amalj2426@gmail.com",
+        "email" : "Saraj2426@gmail.com",
         "password" : "password",
-        "first_name" : "Amal",
+        "first_name" : "Sara",
         "phone_number" : "3605991832",
         "address" : "1400 N 33rd St",
         "city" : "Spokane",

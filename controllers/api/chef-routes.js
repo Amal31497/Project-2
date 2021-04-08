@@ -1,6 +1,6 @@
 const express = require('express');
 const router = require('express').Router();
-const { Chef,Cuisine,Dish,Image } = require('../../models');
+const { Chef, Cuisine, Dish, Image, DishImage } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 const aws = require('aws-sdk');
