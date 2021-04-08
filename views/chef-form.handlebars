@@ -4,38 +4,42 @@
         <h2 class="chefId" id="{{id}}">WELCOME {{first_name}}</h2>
         <h4>Let's get you started</h4>
     </div>
-
     <div class="container">
-            <div class="row chef-form">
-                <div class="col-9 form-group" style="margin-left:-15px">
+        <div class="row">
+            {{!-- Form for chef description --}}
+            <div class="col-9 chef-form">
+                <div class=" form-group" style="margin-left:-15px">
                     <textarea class="form-control" id="chefBio" rows="10"
                         placeholder="Where are you from? What inspires you to cook?"></textarea>
                 </div>
-
-                <div class="col-3 uploadPhoto">
-                    <p>Upload Your Profile Photo</p>
-                    <div class="form-group">
-                        <form action="/api/chefs/upload" method="POST" enctype="multipart/form-data">
-                            <div class="input-group btn btn-default btn-file">
-                                <input id="upload" type="file" name="avatar" class="form-control border-0"
-                                    style="margin-left:-25px; margin-top:-20px" multiple>
-                            </div>
-                            <img id='chefPhoto' />
-                            <div class="row">
-                                <button>Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
                 <button class="btn btn-primary" id="chefFormSubmit">Submit Chef Info</button>
             </div>
-
-
+            {{!-- ----------------------------- --}}
+            {{!-- Form for chef-photo upload --}}
+            <div class="col-3 uploadPhoto">
+                <p>Upload Your Profile Photo</p>
+                <div class="form-group">
+                    <form action="/api/chefs/upload" method="POST" enctype="multipart/form-data">
+                        <div class="input-group btn btn-default btn-file">
+                            <input id="upload" type="file" name="avatar" class="form-control border-0"
+                                style="margin-left:-25px; margin-top:-20px" multiple>
+                        </div>
+                        <img id='chefPhoto' />
+                        <div class="row">
+                            <button>Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            {{!-- ----------------------------- --}}
+        </div>
             <br></br>
-            <form class="dish-form"> 
+            {{!-- For for dish POST request --}}
+        <div class="row">
+            <form class=" col-9 dish-form"> 
                 <h4 >What's On Your Menu?</h4>
                 <div class="row dish">
-                    <div class="col-9 form-group" style="margin-left:-15px">
+                    <div class="form-group" style="margin-left:-15px">
                         <label for="inputFirstName">Dish Name</label>
                         <input type="text" class="form-control" id="dishName">
 
@@ -52,21 +56,6 @@
                                 <option value="4">Indian</option>
                                 <option value="5">Mediterranean</option>
                             </select>
-                        </div>
-                    </div>
-
-                    <div class="col-3 uploadPhoto">
-                        <p>Upload Dish Photo</p>
-                        <div class="form-group">
-                            <form action="/api/dishes/upload" method="POST" enctype="multipart/form-data">
-                                <div class="input-group btn btn-default btn-file">
-                                    <input id="upload" type="file" name="dishPhoto" class="form-control border-0"
-                                        style="margin-left:-25px; margin-top:-20px" multiple>
-                                </div>
-                                <img id='dishPhoto' />
-                                <div class="row">
-                                    <button>Submit</button>
-                                </div>
                         </div>
                     </div>
                 </div>
@@ -98,6 +87,26 @@
 
                 <button class="btn btn-primary" id="dishFormSubmit">Submit dish info</button>
             </form>
+            {{!-- ----------------------------- --}}
+            {{!-- Form fro uploading dish photos --}}
+            <div class="col-3 uploadPhoto">
+                <p>Upload Dish Photo</p>
+                <div class="form-group">
+                    <form action="/api/dishes/uploadDish" method="POST" enctype="multipart/form-data">
+                    <div class="input-group btn btn-default btn-file">
+                        <input id="upload" type="file" name="avatar" class="form-control border-0"
+                            style="margin-left:-25px; margin-top:-20px" multiple>
+                    </div>
+                    <img id='dishPhoto'/>
+                    <div class="row">
+                        <button>Submit</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            {{!-- ----------------------------- --}}
+        </div>
+            
     </div>
     <br><br>
     <button class="btn btn-outline-success btn-lg" id="profile"><a href="/chef-page">Visit Your Profile Page</a></button>
