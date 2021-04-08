@@ -1,12 +1,14 @@
 <div>
     <div class="container-xl">
-    <div class="row">
-        <h2>WE FOUND THESE CHEFS BASED ON YOUR REQUEST</h2>
+        <div class="row">
+            <h2>WE FOUND THESE LOCAL CHEFS BASED ON YOUR REQUEST</h2>
+        </div>
+        <div class="row" id="chefs">
+            <div class="row" id="chefs">
+                {{#each chefs as |chef|}}
+                {{> top-chefs}}
+                {{/each}}
+            </div>
+        </div>
     </div>
-    <div class="row" id="chefs">
-        {{#each chefs as |chef|}}
-        {{> top-chefs}}
-        {{/each}}
-    </div>
-</div>
 </div>
