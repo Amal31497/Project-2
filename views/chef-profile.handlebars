@@ -5,96 +5,86 @@
         <h4>Let's get you started</h4>
     </div>
 
-     <div class="container">
-        <form>
-            <div class="row chef-form">
-                <div class="col-9 form-group" style="margin-left:-15px">
-                    <label>Tell Us A Bit About Yourself</label>
-                    <textarea class="form-control" id="chefBio" rows="10"
-                        placeholder="Where are you from? What inspires you to cook?"></textarea>
-                </div>
+    <div class="container">
 
-                <div class="col-3 uploadPhoto">
-                    <p>Upload Your Profile Photo</p>
-                    <div class="form-group">
-                        <form action="/api/chefs/upload" method="POST" enctype="multipart/form-data">
-                            <div class="input-group btn btn-default btn-file">
-                                <input id="upload" type="file" name="avatar" class="form-control border-0"
-                                    style="margin-left:-25px; margin-top:-20px" multiple>
-                            </div>
-                            <img id='chefPhoto' />
-                            <div class="row">
-                                <button>Submit</button>
-                            </div>
-                    </div>
-                </div>
-                <button class="" id="chefFormSubmit">Submit Chef Info</button>
+        <div class="row chef-form">
+            <div class="col-9 form-group" style="margin-left:-15px">
+                <label>Tell Us A Bit About Yourself</label>
+                <textarea class="form-control" id="chefBio" rows="10"
+                    placeholder="Where are you from? What inspires you to cook?"></textarea>
             </div>
 
+            <div class="col-3 uploadPhoto">
+                <p>Upload Your Profile Photo</p>
+                <div class="form-group">
 
-            <br></br>
-            <div class="dish-form"> 
-                <h4 >What's On Your Menu?</h4>
-                <div class="row dish">
-                    <div class="col-9 form-group" style="margin-left:-15px">
-                        <label for="inputFirstName">Dish Name</label>
-                        <input type="text" class="form-control" id="dishName">
-
-                        <label>Description</label>
-                        <textarea class="form-control" id="dishDescription" rows="5"></textarea>
-
-                        <label>Which Cuisine Does This Dish Belong To?</label>
-                        <input type="text" class="form-control" id="inputCuisine" placeholder="Cuisine">
-                    </div>
-
-                    <div class="col-3 uploadPhoto">
-                        <p>Upload Dish Photo</p>
-                        <div class="form-group">
-                            <form action="/api/dishes/upload" method="POST" enctype="multipart/form-data">
-                                <div class="input-group btn btn-default btn-file">
-                                    <input id="upload" type="file" name="dishPhoto" class="form-control border-0"
-                                        style="margin-left:-25px; margin-top:-20px" multiple>
-                                </div>
-                                <img id='dishPhoto' />
-                                <div class="row">
-                                    <button>Submit</button>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="meat" value="option1">
-                    <label class="form-check-label">Has Meat</label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="gluten" value="option2">
-                    <label class="form-check-label">Has Gluten</label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="dairy" value="option2">
-                    <label class="form-check-label">Has Dairy</label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="nuts" value="option2">
-                    <label class="form-check-label">Has Nuts</label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="shellfish" value="option2">
-                    <label class="form-check-label">Has Shellfish</label>
-                </div>
-
-                <div class="row">
-                    <button id="addMore" class="btn btn-secondary">Add More Dish</button>
-                </div>
-                <button id="dishFormSubmit">Submit dish info</button>
-            </div>
+                   <form action="/api/chefs/upload" method="POST" enctype="multipart/form-data">
+            <input id="upload" type="file" name="avatar"  class="form-control border-0" multiple >
+            <button>Submit</button>
         </form>
+                </div>
+            </div>
+        </div>
+        <button class="" id="chefFormSubmit">Submit Chef Info</button>
     </div>
+
+
+    <br></br>
+    <div class="dish-form">
+        <h4>What's On Your Menu?</h4>
+        <div class="row dish">
+            <div class="col-9 form-group" style="margin-left:-15px">
+                <label for="inputFirstName">Dish Name</label>
+                <input type="text" class="form-control" id="dishName">
+
+                <label>Description</label>
+                <textarea class="form-control" id="dishDescription" rows="5"></textarea>
+
+                <label>Which Cuisine Does This Dish Belong To?</label>
+                <input type="text" class="form-control" id="inputCuisine" placeholder="Cuisine">
+            </div>
+
+            <div class="col-3 uploadPhoto">
+                <p>Upload Dish Photo</p>
+                 <form action="/api/dishes/uploadDish" method="POST" enctype="multipart/form-data">
+            <input id="upload" type="file" name="avatar"  class="form-control border-0" multiple >
+            <button>Submit</button>
+        </form>
+            </div>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="meat" value="option1">
+            <label class="form-check-label">Has Meat</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="gluten" value="option2">
+            <label class="form-check-label">Has Gluten</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="dairy" value="option2">
+            <label class="form-check-label">Has Dairy</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="nuts" value="option2">
+            <label class="form-check-label">Has Nuts</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="shellfish" value="option2">
+            <label class="form-check-label">Has Shellfish</label>
+        </div>
+
+        <div class="row">
+            <button id="addMore" class="btn btn-secondary">Add More Dish</button>
+        </div>
+        <button id="dishFormSubmit">Submit dish info</button>
+    </div>
+
+</div>
 </div>
 
 <script src="/js/chef-form.js"></script>
