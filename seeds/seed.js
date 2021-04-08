@@ -1,10 +1,15 @@
 const sequelize = require('../config/connection');
-const { Chef, Dish, Foodie, Cuisine } = require('../models');
+const { Chef, Dish, Foodie, Cuisine, Image, DishImage } = require('../models');
+
 
 const chefData = require('./chefData.json');
 const dishData = require('./dishData.json');
 const foodieData = require('./foodieData.json');
 const cuisineData = require('./cuisineData.json');
+const imageData = require('./imageData.json');
+const dishImageData = require('./dishImageData.json');
+
+
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -30,8 +35,17 @@ const seedDatabase = async () => {
       ...foodie,
     });
   }
+ for (const image of imageData) {
+  await Image.create({
+    ...image,
+  });
+}
+for (const dishImage of dishImageData) {
+  await DishImage.create({
+    ...dishImage,
+  });
+}
 
- 
   process.exit(0);
 };
 

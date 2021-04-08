@@ -1,5 +1,7 @@
 const router = require('express').Router();
+
 const { Chef, Cuisine, Dish, Image } = require('../models')
+
 const withAuth = require('../utils/auth');
 
 // GET ALL Chefs
