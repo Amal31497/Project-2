@@ -84,3 +84,9 @@
 #chefName,#dishName{
     text-align: center;
 }
+
+#profile{
+    width:20rem;
+    justify-content: center;
+}
+

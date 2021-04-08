@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
       
       if (response.ok) {
         // If successful, redirect the browser to the profile page
-        document.location.replace('/chef-profile');
+        document.location.replace('/chef-form');
         console.log(response)
       } else {
         alert(response.statusText);
