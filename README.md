@@ -16,7 +16,7 @@
 
 _LINK TO HEROKU DEPLOYMENT_
 
-<!-- Insert Link to Heroku -->
+https://boiling-mesa-93312.herokuapp.com/
 
 # Technology-Used
 
@@ -24,7 +24,7 @@ _LINK TO HEROKU DEPLOYMENT_
 
 - To make our server we used express, alongside other dependencies like nodemon, to make our webpage functional with basic paths and routes.
 
-- For the front-end we utilized express- handlebars to make sure that our html pages were dynamic for the user.
+- For the front-end we utilized express-handlebars to make sure that our html pages were dynamic for the user and ensure we can bring in relevant data.
 
 - Then using express-session with bcrypt we ensure that the user can login to our website, be authenticated, and safely save their information.
 
@@ -32,15 +32,13 @@ _LINK TO HEROKU DEPLOYMENT_
 
 - To access our database correctly we used the dotenv file and created a 'gitignore' to make sure that the database and the user's information is secure.
 
-<!-- Jenni/Jasur finish explaining these technologies -->
+- The multer/multer-s3 npm package is a node.js middleware for handling multipart/form-data, which we used for uploading our photos.
 
-- Multer/multer-s3 is a node.js middleware for handling multipart/form-data, which we used for uploading our photos.
+- We also used the uuid npm package to give uploaded images a unique ID before it is then stored in the database so we can later refer to them.
 
-- We used uuid to give uploaded images a unique ID.
+- Amazon Web Services(AWS) is a cloud based service that we used to host our images so we can access/store them using Javascript and the aws-sdk npm package.
 
-- Amazon Web Services-sdk a cloud based service was used to host our images.
-
-- We finally used heroku deploy the application to a public hosting service so that anyone can navigate and then use it.
+- We finally used heroku as a public hosting service to deploy the application so that anyone can navigate and then use it.
 
 # User-Story
 
@@ -54,7 +52,7 @@ _LINK TO HEROKU DEPLOYMENT_
 
 - After signing up as a Foodie the user can search for Chefs nearby them based on their zip code and look through the provided menus to place some orders.
 
-- When after the purchases are made the local Chef will prepare the given dishes and then deliver them to the user at their home (following all safety procedures and precautions).
+- When the purchases are made the local Chef will then prepare the given dishes and so they can deliver them to the user at their home (following all safety procedures and precautions).
 
 ### Main-Application
 
@@ -69,30 +67,19 @@ _END OF APPLICATION_
 # Contributors:
 
 - Amal Janabayev
+
 - Jasur Amirov
+
 - Jenni Detmering
+
 - Hanh Le
+
 - Greg Harris
-
-# Contact-Info:
-
-<!-- Finish Contact Info -->
-
-- Name: Amal Janabayev
-- Email: ...
-
-- Name: Jasur Amirov
-- Email: ...
-
-- Name: Jenni Detmering
-- Email: ...
-
-- Name: Hanh Le
-- Email: ...
-
-- Name: Greg Harris
-- Email: ghart.productions@gmail.com
 
 # Conclusion
 
-- Overall this project was very challenging, required many hours of collaboration, and lots teamwork. But we were able to finally build a minimal viable product with the hopes to work on some other features and make our website complete. We hope to go through our list of future developments to add more functionality and usability for this application in a real world scenario. But we learned how to better work together to build out this project, apply the methods we've been taught in class, and use the technologies we've been learning about to create a fully developed webpage application.
+- This project was very challenging, it required many hours of collaboration and lots of teamwork. But we were able to finally build a minimal viable product with the hopes to work on some other features and finally make our website more complete. 
+
+- We hope to go through our list of future developments to add more usability for this application in a real world scenario. Such as expand on the search bar, linking thumbnails to profiles, adding abilities for the user with their Foodie accounts, and provide a cart/checkout function.
+
+- Overall this assignment tested us on various levels and we learned how to better work together to build out this project, apply the methods we've been taught in class, do outside research on new technologies, and use the we've been learning about to create a mostly developed webpage application.

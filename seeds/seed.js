@@ -18,33 +18,36 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
-  
+
   for (const cuisine of cuisineData) {
     await Cuisine.create({
       ...cuisine,
     });
   }
+
   for (const dish of dishData) {
     await Dish.create({
       ...dish,
     });
-   
+
   }
   for (const foodie of foodieData) {
     await Foodie.create({
       ...foodie,
     });
   }
- for (const image of imageData) {
-  await Image.create({
-    ...image,
-  });
-}
-for (const dishImage of dishImageData) {
-  await DishImage.create({
-    ...dishImage,
-  });
-}
+
+  for (const image of imageData) {
+    await Image.create({
+      ...image,
+    });
+  }
+
+  for (const dishImage of dishImageData) {
+    await DishImage.create({
+      ...dishImage,
+    });
+  }
 
   process.exit(0);
 };
