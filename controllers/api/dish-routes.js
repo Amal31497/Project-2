@@ -3,7 +3,6 @@ const withAuth = require('../../utils/auth');
 const { Dish, Cuisine, Chef } = require('../../models');
 const express = require('express');
 
-
 const aws = require('aws-sdk');
 
 const multer = require('multer');
@@ -13,22 +12,22 @@ const path = require('path');
 
 const app = express();
 
-const s3 = new aws.S3({ apiVersion: '2006-03-01'});
+const s3 = new aws.S3({ apiVersion: '2006-03-01' });
 
 const upload = multer({
     storage: multerS3({
         s3: s3,
         bucket: 'chefimages',
-        metadata: (req,file,cb) =>{
-            cb(null, {fieldName: file.fieldname });
+        metadata: (req, file, cb) => {
+            cb(null, { fieldName: file.fieldname });
         },
-        key: (req,file,cb) => {
+        key: (req, file, cb) => {
             const ext = path.extname(file.originalname);
-            
+
             const fileUname = uuid();
 
             cb(null, `${fileUname}${ext}`);
-            
+
             const chefID = req.session.user_id;
 
             const cuisineID = chefID
@@ -37,34 +36,34 @@ const upload = multer({
 
             // console.log(dish);
 
-            
+
             console.log(cuisineID);
-            const fullName = fileUname+ext;
+            const fullName = fileUname + ext;
             console.log(fullName);
 
             Dish.update(
-              {
-                image_name:fullName,
-            },
-            {
-              where:{
-                cuisine_id: 1,
-              }
-            })
-            .then(
-              (updated) =>{
-                res.json(updated)
-              }
-            ).catch((err) =>{
-              res.json(err)
-            });
+                {
+                    image_name: fullName,
+                },
+                {
+                    where: {
+                        cuisine_id: 1,
+                    }
+                })
+                .then(
+                    (updated) => {
+                        res.json(updated)
+                    }
+                ).catch((err) => {
+                    res.json(err)
+                });
         }
 
     })
 })
 
-router.post('/uploadDish', upload.array('avatar'), (req,res) =>{
-  return res.json({status: "OK", uploaded: req.files.length});
+router.post('/uploadDish', upload.array('avatar'), (req, res) => {
+    return res.json({ status: "OK", uploaded: req.files.length });
 });
 
 
